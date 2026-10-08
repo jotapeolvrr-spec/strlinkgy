@@ -1,0 +1,957 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Starlink Guyana · Marinho</title>
+<meta name="description" content="Starlink in Guyana through Marinho Connecting Markets. Order on WhatsApp +592 666 5260.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: orbital photography. Full-bleed Earth-from-orbit hero, sunrise on the limb; the page descends to the ground and the product appears on a white 'studio' sheet. Left-weighted 12-col grid, mono labels. Dark world with one light product chapter. */
+:root{
+  --night:#05070d;
+  --deep:#0a0f1c;
+  --star:#eef1f6;
+  --mute:#8b93a7;
+  --line:rgba(238,241,246,.13);
+  --dawn:#f2b544;
+  --ember:#e0683d;
+  --fault:#d9654b;
+  --limb:#3d8bff;
+  --paper:#ffffff;
+  --ink:#05070d;
+  --ink-mute:#596075;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --gut:clamp(16px,4vw,56px);
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--night);scroll-behavior:smooth}
+body{background:var(--night);color:var(--star);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--dawn);color:var(--night)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--dawn);outline-offset:4px}
+.wrap{padding-inline:var(--gut)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* type */
+.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.wide{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:.9}
+.cond{font-family:var(--display);font-stretch:62%;font-weight:700;text-transform:uppercase;line-height:.88}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:inherit}
+p{margin:0}
+.lede{font-size:clamp(17px,1.35vw,20px);color:var(--mute);max-width:46ch;line-height:1.55}
+.lede b{color:var(--star);font-weight:600}
+
+/* header */
+.bar{position:fixed;inset:0 0 auto 0;z-index:50;padding:calc(env(safe-area-inset-top,0px) + 14px) var(--gut) 14px;display:flex;align-items:center;gap:20px;transition:background .5s var(--ease),border-color .5s;border-bottom:1px solid transparent}
+.bar.solid{background:rgba(5,7,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.bar .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.bar .brand img{height:34px;width:auto}
+.bar .x{width:1px;height:22px;background:var(--line)}
+.bar .sl{height:26px;width:auto}
+.bar .sp{flex:1}
+.langs{display:flex;gap:2px;font-family:var(--mono);font-size:11px;letter-spacing:.12em}
+.langs button{background:none;border:0;color:var(--mute);padding:8px 8px;cursor:pointer;font:inherit;letter-spacing:inherit}
+.langs button[aria-pressed="true"]{color:var(--star);text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--dawn)}
+.bar .wa{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:10px 16px;border:1px solid var(--line);transition:background .3s,color .3s,border-color .3s}
+.bar .wa:hover{background:var(--star);color:var(--night);border-color:var(--star)}
+
+/* review banner */
+.review{position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--dawn);color:var(--night);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px var(--gut) calc(8px + env(safe-area-inset-bottom,0px));text-align:center}
+
+/* buttons */
+.cta{--h:64px;position:relative;display:inline-flex;align-items:center;gap:18px;height:var(--h);padding:0 14px 0 28px;background:var(--star);color:var(--night);text-decoration:none;font-family:var(--display);font-stretch:112%;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:15px;overflow:hidden;isolation:isolate;transition:transform .5s var(--ease)}
+.cta::before{content:"";position:absolute;inset:0;background:var(--dawn);transform:translateY(101%);transition:transform .6s var(--ease);z-index:-1}
+.cta:hover::before{transform:none}
+.cta .t{display:grid;overflow:hidden;height:1.2em;line-height:1.2em}
+.cta .t span{transition:transform .6s var(--ease)}
+.cta .t span+span{position:absolute;transform:translateY(100%)}
+.cta:hover .t span:first-child{transform:translateY(-100%)}
+.cta:hover .t span+span{transform:none}
+.cta .t{position:relative}
+.cta .ar{width:40px;height:40px;display:grid;place-items:center;background:var(--night);color:var(--star);overflow:hidden;position:relative}
+.cta .ar svg{transition:transform .6s var(--ease)}
+.cta:hover .ar svg{transform:translateX(3px) rotate(-45deg)}
+.cta.ghost{background:transparent;color:var(--star);box-shadow:inset 0 0 0 1px var(--line)}
+.cta.ghost::before{background:var(--star)}
+.cta.ghost:hover{color:var(--night)}
+.cta.ghost .ar{background:var(--star);color:var(--night)}
+.ulink{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s var(--ease)}
+.ulink:hover{background-size:100% 1px}
+
+/* HERO */
+.hero{position:relative;min-height:max(640px,94svh);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:1fr auto;padding-top:calc(env(safe-area-inset-top,0px) + 96px);overflow:hidden}
+.hero .ph{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero .ph img{width:100%;height:110%;object-fit:cover;object-position:50% 40%;transform-origin:55% 35%;will-change:transform}
+.js .hero .ph img{animation:push 3.2s var(--ease) both}
+@keyframes push{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,6,15,.72) 0%,rgba(3,6,15,.25) 26%,rgba(3,6,15,.35) 55%,rgba(5,7,13,.92) 88%,var(--night) 100%),linear-gradient(90deg,rgba(3,6,15,.55),transparent 60%)}
+.hero .meta{position:relative;z-index:4;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.hero h1{position:relative;z-index:2;font-size:clamp(52px,10.2vw,196px);margin-top:clamp(28px,6vh,72px)}
+.hero h1 .l{display:block;white-space:nowrap}
+.hero h1 .l:nth-child(2){padding-left:clamp(0px,14vw,280px)}
+.hero h1 .l:nth-child(3){color:var(--star)}
+.hero h1 .l span{display:inline-block}
+.hero .foot{position:relative;z-index:4;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end;padding-block:28px 40px}
+.hero .foot .lede{grid-column:1 / span 5}
+.hero .foot .act{grid-column:7 / -1;display:flex;flex-direction:column;align-items:flex-end;gap:14px;text-align:right}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.flagline{display:inline-flex;align-items:center;gap:10px;color:var(--dawn)}
+.flagline svg{width:25px;height:15px;flex:none;display:block}
+
+/* chapters */
+section{position:relative}
+.chap{padding-block:clamp(96px,14vw,200px)}
+.tag{display:flex;gap:16px;align-items:center;margin-bottom:clamp(28px,4vw,56px)}
+.tag::before{content:"";width:28px;height:1px;background:var(--dawn)}
+
+/* manifesto */
+.mani h2{font-size:clamp(30px,4.6vw,76px);max-width:16ch}
+.verbs{margin-top:clamp(48px,7vw,110px);display:flex;flex-direction:column}
+.verbs li{list-style:none;font-size:clamp(46px,9.4vw,170px);border-top:1px solid var(--line);padding-block:.06em .02em;display:flex;align-items:baseline;justify-content:space-between;gap:20px;color:rgba(238,241,246,.16);transition:color .9s var(--ease)}
+.verbs li.on{color:var(--star)}
+.verbs li .mono{display:none}
+.verbs li.on .mono{opacity:1;color:var(--dawn)}
+.verbs ul{padding:0;margin:0}
+.mani .close{margin-top:clamp(40px,6vw,80px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.mani .close p:first-child{grid-column:1 / span 5;color:var(--mute)}
+.mani .close p:last-child{grid-column:7 / -1;font-family:var(--display);font-stretch:110%;font-weight:600;font-size:clamp(22px,2.4vw,34px);line-height:1.15}
+
+/* pain */
+.pain{background:var(--deep)}
+.pain .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.pain h2{grid-column:1 / span 6;font-size:clamp(44px,6.4vw,112px)}
+.pain .intro{grid-column:1 / span 5;margin-top:28px}
+.log{grid-column:8 / -1;grid-row:1 / span 2;align-self:start;font-family:var(--mono);font-size:13px;border:1px solid var(--line);background:rgba(5,7,13,.6)}
+.log header{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);color:var(--mute);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.log header b{color:var(--fault);font-weight:500}
+.log ol{margin:0;padding:6px 0;list-style:none}
+.log li{display:grid;grid-template-columns:1fr auto;gap:12px;padding:9px 16px;border-bottom:1px dashed rgba(238,241,246,.07)}
+.log li:last-child{border:0}
+.log .ts{display:none}
+.log .ev{color:var(--star);text-decoration:line-through;text-decoration-color:var(--fault);text-decoration-thickness:1px}
+.log .st{color:var(--fault);font-size:11px;letter-spacing:.1em}
+.pain .cost{margin-top:clamp(80px,10vw,150px);font-size:clamp(34px,5.4vw,96px);max-width:18ch}
+.pain .cost em{font-style:normal;color:var(--dawn)}
+.pain .cost-pre{max-width:44ch;margin-bottom:22px}
+
+/* solution */
+.sol .top{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.sol h2{grid-column:1 / span 7;font-size:clamp(48px,8vw,150px)}
+.sol .top .lede{grid-column:9 / -1}
+.sol h3{margin-top:18px;font-family:var(--display);font-stretch:110%;font-weight:600;font-size:clamp(20px,2vw,28px);line-height:1.2;grid-column:1 / span 7;color:var(--mute)}
+.beam{margin-top:clamp(48px,6vw,90px);position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.beam svg{width:100%;height:auto;display:block}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.steps li{list-style:none;padding:28px 28px 36px 0;display:flex;flex-direction:column;gap:14px}
+.steps li+li{padding-left:28px;border-left:1px solid var(--line)}
+.steps .n{font-family:var(--display);font-stretch:62%;font-weight:700;font-size:64px;line-height:1;color:var(--dawn)}
+.steps h4{margin:0;font-family:var(--display);font-stretch:115%;font-weight:700;text-transform:uppercase;font-size:18px;letter-spacing:.01em}
+.steps p{color:var(--mute);font-size:15.5px;max-width:34ch}
+.steps{padding:0;margin:0}
+.sol .row{margin-top:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.sol .row p{font-family:var(--display);font-stretch:112%;font-weight:600;font-size:clamp(18px,1.6vw,22px);max-width:40ch}
+
+/* altitude */
+.alt{background:linear-gradient(var(--night),var(--deep) 60%,var(--night))}
+.alt .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.alt h2{grid-column:1 / span 7;font-size:clamp(40px,5.6vw,98px)}
+.alt .lede{grid-column:1 / span 5;margin-top:28px}
+.ph-fig{margin:0;display:flex;flex-direction:column;gap:12px}
+.ph-fig .fr{overflow:hidden;position:relative}
+.ph-fig img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease)}
+.ph-fig:hover img{transform:scale(1.04)}
+.alt .geo{grid-column:9 / -1;grid-row:1 / span 2;align-self:end}
+.alt .geo .fr{aspect-ratio:4/5;max-width:100%}
+.sx{margin:clamp(64px,9vw,130px) calc(var(--gut) * -1) 0}
+.sx .fr{aspect-ratio:21/9;max-width:100%}
+.sx figcaption{padding-inline:var(--gut)}
+.sx img{object-position:50% 60%}
+.alt .figs{margin-top:clamp(56px,8vw,120px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.fig{display:flex;flex-direction:column;gap:12px}
+.fig .num{font-size:clamp(64px,13vw,240px);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fig.far{grid-column:1 / span 7;color:rgba(238,241,246,.22)}
+.fig.far .num{-webkit-text-stroke:1px rgba(238,241,246,.35);color:transparent}
+.fig.near{grid-column:6 / -1;text-align:right;align-items:flex-end;margin-top:clamp(20px,4vw,60px)}
+.fig.near .num{color:var(--star)}
+.fig.near .num small,.fig.far .num small{font-size:.32em;letter-spacing:0;margin-left:.08em}
+.fig .mono{max-width:34ch}
+.fig.near .mono{color:var(--dawn)}
+.spacex{margin-top:32px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;border-top:1px solid var(--line);padding-top:32px}
+.spacex .mono{grid-column:1 / span 3}
+.spacex p{grid-column:4 / span 6;font-size:clamp(19px,1.7vw,24px);line-height:1.45}
+.spacex p b{color:var(--dawn);font-weight:600}
+
+/* uses */
+.uses h2{font-size:clamp(40px,5.8vw,104px);max-width:14ch}
+.idx{margin:clamp(48px,6vw,90px) 0 0;padding:0}
+.idx li{list-style:none;position:relative;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:baseline;padding-block:clamp(18px,2.2vw,30px);isolation:isolate;transition:color .5s var(--ease)}
+.idx li:last-child{border-bottom:1px solid var(--line)}
+.idx li::before{content:"";position:absolute;inset:0 calc(var(--gut) * -1);background:var(--star);transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--ease);z-index:-1}
+.idx li:hover::before{transform:none}
+.idx li:hover{color:var(--night)}
+.idx li:hover .mono,.idx li:hover p{color:var(--night)}
+.idx .mono{grid-column:1 / span 2}
+.idx h3{grid-column:3 / span 6;font-size:clamp(32px,4.8vw,86px)}
+.idx p{grid-column:9 / -1;color:var(--mute);font-size:15.5px;transition:color .5s}
+
+/* freedom */
+.free{overflow:hidden}
+.free .big{font-size:clamp(56px,12vw,230px);white-space:nowrap}
+.free .big.o{color:transparent;-webkit-text-stroke:1px rgba(238,241,246,.4);padding-left:clamp(0px,10vw,200px)}
+.free h3{margin-top:clamp(36px,5vw,64px);font-family:var(--display);font-stretch:110%;font-weight:600;font-size:clamp(24px,2.8vw,42px);line-height:1.15;max-width:22ch;margin-left:auto}
+.imagine{margin-top:clamp(60px,8vw,120px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.imagine p{padding:28px 28px 0 0;font-size:clamp(18px,1.5vw,21px);line-height:1.45}
+.imagine p+p{padding-left:28px;border-left:1px solid var(--line)}
+.imagine p span{display:block;color:var(--dawn);margin-bottom:14px}
+.free .end{margin-top:clamp(48px,6vw,80px);font-family:var(--display);font-stretch:112%;font-weight:700;text-transform:uppercase;font-size:clamp(18px,1.6vw,22px);letter-spacing:.01em}
+
+/* voices */
+.voices{background:var(--deep)}
+.voices .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.voices h2{font-size:clamp(36px,4.8vw,84px);max-width:16ch}
+.disc{border:1px solid var(--dawn);color:var(--dawn);padding:8px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.qs{margin-top:clamp(48px,6vw,96px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(36px,4vw,64px) 24px}
+.q{display:flex;flex-direction:column;gap:18px;margin:0}
+.q blockquote{margin:0;font-family:var(--display);font-stretch:105%;font-weight:500;line-height:1.2;font-size:clamp(22px,2.2vw,32px)}
+.q blockquote::before{content:"“";color:var(--dawn)}
+.q blockquote::after{content:"”";color:var(--dawn)}
+.q:nth-child(1){grid-column:1 / span 6}
+.q:nth-child(2){grid-column:8 / span 5;margin-top:clamp(0px,8vw,140px)}
+.q:nth-child(3){grid-column:2 / span 5}
+.q:nth-child(4){grid-column:8 / span 4}
+.q:nth-child(5){grid-column:4 / span 7}
+.q:nth-child(5) blockquote{font-size:clamp(26px,3vw,46px)}
+.disc-note{margin-top:clamp(48px,6vw,80px);max-width:70ch;color:var(--mute);font-size:13.5px}
+
+/* offer · product sheet */
+.offer{background:var(--paper);color:var(--ink);overflow:hidden;padding-block:clamp(96px,12vw,180px)}
+.offer .tag::before{background:var(--ink)}
+.offer .mono{color:var(--ink-mute)}
+.oname{font-size:clamp(60px,12.5vw,240px);line-height:.82;color:var(--ink)}
+.oname span{color:var(--ink-mute);font-weight:300}
+.olead{position:relative;z-index:1;margin-top:20px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
+.prod{margin:clamp(-40px,-3vw,-10px) calc(var(--gut) * -1) 0 auto;width:min(1040px,82%);position:relative;z-index:0}
+.prod img{width:100%;height:auto;mix-blend-mode:multiply}
+.js .prod.rv{opacity:1;transform:translateX(8%) rotate(-1.5deg);transition:transform 1.8s var(--ease)}
+.js .prod.rv.in{transform:none}
+.offer .grid{margin-top:clamp(40px,5vw,72px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start;border-top:1px solid var(--ink);padding-top:36px}
+.offer .left{grid-column:1 / span 6;display:flex;flex-direction:column;gap:26px}
+.offer .left h2{font-family:var(--display);font-stretch:112%;font-weight:700;text-transform:uppercase;font-size:clamp(24px,2.6vw,40px);line-height:1.04;max-width:18ch}
+.offer .lede{color:var(--ink-mute)}
+.offer .lede b{color:var(--ink)}
+.price{display:flex;flex-direction:column;gap:6px}
+.price .amt{font-size:clamp(56px,8vw,128px);font-variant-numeric:tabular-nums;line-height:.9;display:flex;align-items:flex-start;gap:.12em;color:var(--ink)}
+.price .amt small{font-family:var(--mono);font-size:14px;font-weight:500;letter-spacing:.14em;color:var(--ember);margin-top:.5em}
+.offer .cta{background:var(--ink);color:var(--paper)}
+.offer .cta .ar{background:var(--dawn);color:var(--ink)}
+.offer .cta:hover{color:var(--ink)}
+.side{grid-column:8 / -1;display:flex;flex-direction:column;gap:40px}
+.specs{margin:0;display:grid;grid-template-columns:auto 1fr;border-top:1px solid rgba(5,7,13,.14)}
+.specs dt,.specs dd{margin:0;padding:14px 0;border-bottom:1px solid rgba(5,7,13,.14)}
+.specs dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);padding-right:28px;padding-top:17px}
+.specs dd{font-family:var(--display);font-stretch:106%;font-weight:600;font-size:17px;text-align:right}
+.ask{margin:0;padding:0}
+.ask .h{margin-bottom:10px}
+.ask li{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px dashed rgba(5,7,13,.16);font-size:15.5px}
+.ask li::after{content:"✓";color:var(--ember)}
+.offer .copy{border-color:rgba(5,7,13,.2);color:var(--ink-mute)}
+.offer .copy:hover{color:var(--ink);border-color:var(--ink)}
+.offer .phone .num{color:var(--ink)}
+.offer :focus-visible{outline-color:var(--ember)}
+.phone{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.phone .num{font-family:var(--mono);font-size:18px;letter-spacing:.04em;user-select:all}
+.copy{background:none;border:1px solid var(--line);color:var(--mute);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;cursor:pointer;transition:color .3s,border-color .3s}
+.copy:hover{color:var(--star);border-color:var(--star)}
+
+/* doubt */
+.doubt{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.doubt .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;padding-block:clamp(56px,7vw,110px)}
+.doubt h2{grid-column:1 / span 5;font-size:clamp(34px,4.2vw,72px)}
+.doubt .mid{grid-column:6 / span 4;display:flex;flex-direction:column;gap:14px}
+.doubt .mid p:first-child{font-family:var(--display);font-stretch:115%;font-weight:700;text-transform:uppercase;font-size:20px}
+.doubt .mid p+p{color:var(--mute)}
+.doubt .r{grid-column:10 / -1;justify-self:end}
+
+/* about */
+.about .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start}
+.about .mk{grid-column:1 / span 3}
+.about .mk img{width:120px;height:auto;opacity:.92}
+.about .txt{grid-column:5 / -1;display:flex;flex-direction:column;gap:20px}
+.about h2{font-size:clamp(34px,4.2vw,72px)}
+.about .txt p{font-size:clamp(18px,1.5vw,21px);line-height:1.5;max-width:52ch;color:var(--mute)}
+.about .txt p b{color:var(--star);font-weight:600}
+.about .tl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dawn)}
+.brands{margin-top:clamp(48px,6vw,80px);border-top:1px solid var(--line);padding-top:28px;display:flex;align-items:center;justify-content:flex-start;gap:clamp(20px,4vw,56px);flex-wrap:nowrap}
+.brands figure{margin:0;flex:none}
+.brands .lg{display:flex;align-items:center}
+.brands img{height:28px;width:auto;opacity:.7;transition:opacity .4s}
+.brands img.tall{height:34px}
+.brands figure:hover img{opacity:1}
+.brands figcaption{display:none}
+
+/* faq */
+.faq .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.faq h2{grid-column:1 / span 4;font-size:clamp(36px,4.4vw,76px);align-self:start;position:sticky;top:110px}
+.faq .list{grid-column:6 / -1;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-family:var(--display);font-stretch:108%;font-weight:600;font-size:clamp(18px,1.6vw,23px)}
+summary::-webkit-details-marker{display:none}
+summary .pl{flex:none;width:18px;height:18px;position:relative}
+summary .pl::before,summary .pl::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:currentColor;transition:transform .4s var(--ease)}
+summary .pl::after{transform:rotate(90deg)}
+details[open] summary .pl::after{transform:rotate(0)}
+summary:hover{color:var(--dawn)}
+details p{padding:0 0 26px;color:var(--mute);max-width:60ch}
+
+/* final */
+.final{position:relative;overflow:hidden;padding-top:clamp(110px,14vw,220px);min-height:max(640px,90svh);display:flex;flex-direction:column}
+.final .sun{position:absolute;left:50%;bottom:-62vw;width:140vw;height:80vw;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,196,110,.65),rgba(242,140,60,.28) 32%,rgba(61,139,255,.22) 58%,rgba(61,139,255,0) 74%);filter:blur(6px);pointer-events:none}
+.final .hz{position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to top,rgba(61,139,255,.12),transparent);pointer-events:none}
+.final .in{position:relative;z-index:2;flex:1;display:flex;flex-direction:column}
+.final h2{font-size:clamp(40px,7.4vw,140px);max-width:15ch}
+.final h3{margin-top:28px;font-family:var(--display);font-stretch:112%;font-weight:700;text-transform:uppercase;font-size:clamp(22px,2.6vw,40px);color:var(--dawn)}
+.final .places{margin-top:24px}
+.final .bot{margin-top:auto;padding-block:clamp(56px,7vw,100px) 48px;display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.final .bot p{font-size:clamp(19px,1.8vw,26px);max-width:24ch;font-family:var(--display);font-stretch:108%;font-weight:500;line-height:1.25}
+
+footer{border-top:1px solid var(--line);padding-block:40px calc(48px + env(safe-area-inset-bottom,0px))}
+footer .r1{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .r1 img{height:42px;width:auto}
+footer .op{margin-top:28px;max-width:80ch;color:var(--mute);font-size:13px;line-height:1.6}
+
+/* reveal: visible at rest, settles in */
+.js .rv{opacity:.28;transform:translateY(22px);transition:opacity 1.1s var(--ease),transform 1.2s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero h1 .l span{transform:translateY(18%);opacity:.0001;animation:rise 1.4s var(--ease) forwards}
+.js .hero h1 .l:nth-child(2) span{animation-delay:.12s}
+.js .hero h1 .l:nth-child(3) span{animation-delay:.24s}
+@keyframes rise{to{transform:none;opacity:1}}
+
+@media (max-width:900px){
+  .bar .wa{display:none}
+  .hero h1 .l:nth-child(2){padding-left:0}
+  .hero .foot .lede,.hero .foot .act{grid-column:1 / -1;align-items:flex-start;text-align:left}
+  .btns{justify-content:flex-start}
+  .mani .close p:first-child,.mani .close p:last-child{grid-column:1 / -1}
+  .pain h2,.pain .intro,.log{grid-column:1 / -1;grid-row:auto}
+  .log{margin-top:36px}
+  .sol h2,.sol .top .lede,.sol h3{grid-column:1 / -1}
+  .steps{grid-template-columns:1fr}
+  .steps li+li{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .alt h2,.alt .lede{grid-column:1 / -1}
+  .alt .geo{grid-column:1 / -1;grid-row:auto;margin-top:36px}
+  .alt .geo .fr{aspect-ratio:4/3}
+  .sx .fr{aspect-ratio:4/3}
+  .fig.far,.fig.near{grid-column:1 / -1}
+  .spacex .mono,.spacex p{grid-column:1 / -1}
+  .idx .mono{grid-column:1 / -1}
+  .idx h3{grid-column:1 / -1}
+  .idx p{grid-column:1 / -1}
+  .imagine{grid-template-columns:1fr}
+  .imagine p+p{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .imagine p{padding:24px 0}
+  .q:nth-child(n){grid-column:1 / -1;margin-top:0}
+  .offer .left,.side{grid-column:1 / -1}
+  .side{margin-top:24px}
+  .prod{width:112%;margin-top:12px}
+  .doubt h2,.doubt .mid,.doubt .r{grid-column:1 / -1;justify-self:start}
+  .about .mk,.about .txt{grid-column:1 / -1}
+  .about .mk img{width:96px}
+  .faq h2{grid-column:1 / -1;position:static}
+  .faq .list{grid-column:1 / -1}
+  .free .big{white-space:normal}
+  .free .big.o{padding-left:0}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .bar .brand img{height:28px}
+  .bar .brand .sl{height:20px}
+  .bar .brand{gap:10px}
+  .hero h1{font-size:clamp(34px,11.4vw,64px)}
+  .hero h1 .l{white-space:normal}
+  .cta{--h:58px;padding-left:22px;font-size:14px}
+  .verbs li{font-size:clamp(34px,11vw,60px)}
+  .verbs li .mono{display:none}
+  .fig .num{font-size:clamp(52px,17vw,110px)}
+  .brands{gap:18px;justify-content:space-between}
+  .brands img{height:18px}
+  .brands img.tall{height:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv,.js .hero h1 .l span{opacity:1;transform:none}
+}
+</style>
+
+
+<header class="bar" id="bar">
+  <a class="brand" href="#top" aria-label="Marinho Connecting Markets · Starlink">
+    <img src="media/marinho.webp" alt="Marinho Connecting Markets" width="53" height="34">
+    <span class="x" aria-hidden="true"></span>
+    <img class="sl" src="media/starlink.webp" alt="Starlink" width="52" height="26">
+  </a>
+  <span class="sp"></span>
+  <nav class="langs" aria-label="Language" id="langs"></nav>
+  <a class="wa" data-wa href="#" target="_blank" rel="noopener" data-i="nav.cta"></a>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="ph" aria-hidden="true"><picture><source media="(max-width:700px)" srcset="media/hero-m.webp"><img id="heroImg" src="media/hero.webp" alt="" width="1920" height="1080" fetchpriority="high"></picture></div>
+  <div class="wrap" style="position:relative;z-index:2;display:flex;flex-direction:column">
+    <div class="meta">
+      <span class="mono flagline"><svg viewBox="0 0 500 300" aria-hidden="true"><rect width="500" height="300" fill="#009e49"/><polygon points="0,0 500,150 0,300" fill="#fff"/><polygon points="0,13 465,150 0,287" fill="#fcd116"/><polygon points="0,0 250,150 0,300" fill="#000"/><polygon points="0,17 222,150 0,283" fill="#ce1126"/></svg><span data-i="hero.kicker"></span></span>
+    </div>
+    <h1 class="wide" id="h1"></h1>
+  </div>
+  <div class="wrap foot">
+    <p class="lede" data-i="hero.sub"></p>
+    <div class="act">
+      <div class="btns">
+        <a class="cta" data-wa href="#" target="_blank" rel="noopener" data-cta="hero.cta"></a>
+        <a class="cta ghost" href="#buy" data-cta="hero.price"></a>
+      </div>
+      <span class="mono" data-i="hero.seller"></span>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="chap mani wrap">
+  <p class="mono tag" data-i="mani.tag"></p>
+  <h2 class="wide rv" style="font-size:clamp(28px,4.2vw,70px)" data-i="mani.title"></h2>
+  <div class="verbs"><ul id="verbs"></ul></div>
+  <div class="close">
+    <p class="rv" data-i="mani.far"></p>
+    <p class="rv" data-i="mani.sky"></p>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="chap pain">
+  <div class="wrap">
+    <p class="mono tag" data-i="pain.tag"></p>
+    <div class="grid">
+      <h2 class="wide rv" data-i="pain.title"></h2>
+      <p class="lede intro rv" data-i="pain.intro"></p>
+      <div class="log rv" role="list" aria-label="Network log">
+        <header><span data-i="pain.logTitle"></span><b data-i="pain.logStatus"></b></header>
+        <ol id="log"></ol>
+      </div>
+    </div>
+    <p class="lede cost-pre" style="margin-top:clamp(80px,10vw,150px)" data-i="pain.pre"></p>
+    <p class="wide cost rv" style="margin-top:0" data-i="pain.cost"></p>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="chap sol wrap">
+  <p class="mono tag" data-i="sol.tag"></p>
+  <div class="top">
+    <h2 class="wide rv" data-i="sol.title"></h2>
+    <p class="lede rv" data-i="sol.body"></p>
+    <h3 data-i="sol.sub"></h3>
+  </div>
+  <div class="beam" aria-hidden="true">
+    <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid meet" fill="none">
+      <path d="M0 268 Q600 236 1200 268" stroke="rgba(238,241,246,.25)"/>
+      <path id="orb" d="M-20 86 Q600 6 1220 86" stroke="rgba(238,241,246,.28)" stroke-dasharray="2 6"/>
+      <g id="sat"><rect x="-9" y="-3" width="18" height="6" fill="#eef1f6"/><rect x="-26" y="-2" width="14" height="4" fill="#8b93a7"/><rect x="12" y="-2" width="14" height="4" fill="#8b93a7"/></g>
+      <line id="ray" x1="250" y1="250" x2="600" y2="46" stroke="#f2b544" stroke-width="1.2" stroke-dasharray="4 5"/>
+      <g transform="translate(250 252)"><path d="M-22 -4 L22 -14" stroke="#eef1f6" stroke-width="3"/><path d="M0 -9 L0 6 M-8 8 L8 8" stroke="#eef1f6" stroke-width="2"/></g>
+      <text x="268" y="292" fill="#8b93a7" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1.6" id="lblDish">DISH · CLEAR VIEW OF THE SKY</text>
+      <text x="1180" y="34" text-anchor="end" fill="#8b93a7" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1.6">LOW EARTH ORBIT · ≈ 550 KM</text>
+    </svg>
+  </div>
+  <ol class="steps" id="steps"></ol>
+  <div class="row">
+    <p class="rv" data-i="sol.line"></p>
+    <a class="cta ghost" data-wa href="#" target="_blank" rel="noopener" data-cta="sol.cta"></a>
+  </div>
+</section>
+
+<!-- PRODUCT + OFFER -->
+<section class="offer" id="buy">
+  <div class="wrap">
+    <p class="mono tag" data-i="offer.tag"></p>
+    <h2 class="wide oname" style="max-width:none;text-transform:uppercase;font-family:var(--display);font-stretch:125%;font-weight:800">Starlink <span>Mini</span></h2>
+    <p class="olead" data-i="offer.lead"></p>
+    <figure class="prod rv" style="margin-bottom:0"><img src="media/mini.webp" alt="Starlink Mini" width="1400" height="442" loading="lazy"></figure>
+    <div class="grid">
+      <div class="left">
+        <div class="price"><span class="mono" data-i="offer.priceLabel"></span><span class="wide amt"><small>GYD</small>65,000</span></div>
+        <h2 data-i="offer.title"></h2>
+        <p class="lede" data-i="offer.body"></p>
+        <a class="cta" data-wa href="#" target="_blank" rel="noopener" data-cta="offer.cta"></a>
+        <div class="phone"><span class="mono" data-i="offer.wa"></span><span class="num" id="num">+592 666 5260</span><button class="copy" id="copy" type="button" data-i="offer.copy"></button></div>
+      </div>
+      <div class="side">
+        <dl class="specs" id="specs"></dl>
+        <div><p class="mono h" data-i="offer.askTitle"></p><ul class="ask" id="ask"></ul></div>
+      </div>
+    </div>
+    <p class="mono" style="margin-top:40px;font-size:10.5px" data-i="offer.note"></p>
+  </div>
+</section>
+
+<!-- ALTITUDE / SPACEX -->
+<section class="chap alt">
+  <div class="wrap">
+    <p class="mono tag" data-i="alt.tag"></p>
+    <div class="grid">
+      <h2 class="wide rv" data-i="alt.title"></h2>
+      <p class="lede rv" data-i="alt.body"></p>
+      <figure class="ph-fig geo rv"><div class="fr"><img src="media/geo.webp" alt="" width="1000" height="750" loading="lazy" style="object-position:40% 50%"></div><figcaption class="mono" data-i="alt.geoCap"></figcaption></figure>
+    </div>
+    <div class="figs">
+      <div class="fig far">
+        <span class="num wide">35,786<small>KM</small></span>
+        <span class="mono" data-i="alt.far"></span>
+      </div>
+      <div class="fig near">
+        <span class="num wide"><span id="near">550</span><small>KM</small></span>
+        <span class="mono" data-i="alt.near"></span>
+      </div>
+    </div>
+    <figure class="ph-fig sx"><div class="fr"><img src="media/spacex.webp" alt="" width="1600" height="900" loading="lazy"></div><figcaption class="mono" data-i="alt.sxCap"></figcaption></figure>
+    <div class="spacex">
+      <span class="mono" data-i="alt.byTag"></span>
+      <p class="rv" data-i="alt.by"></p>
+    </div>
+  </div>
+</section>
+
+<!-- USES -->
+<section class="chap uses wrap">
+  <p class="mono tag" data-i="uses.tag"></p>
+  <h2 class="wide rv" data-i="uses.title"></h2>
+  <ul class="idx" id="uses"></ul>
+</section>
+
+<!-- FREEDOM -->
+<section class="chap free wrap">
+  <p class="mono tag" data-i="free.tag"></p>
+  <p class="wide big rv" data-i="free.a"></p>
+  <p class="wide big o rv" data-i="free.b"></p>
+  <h3 class="rv" data-i="free.sub"></h3>
+  <div class="imagine" id="imagine"></div>
+  <p class="end" data-i="free.end"></p>
+</section>
+
+<!-- VOICES -->
+<section class="chap voices">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="wide rv" data-i="voices.title"></h2>
+      <span class="disc" data-i="voices.badge"></span>
+    </div>
+    <div class="qs" id="qs"></div>
+    <p class="disc-note" data-i="voices.note"></p>
+  </div>
+</section>
+
+<!-- DOUBT -->
+<section class="doubt">
+  <div class="wrap">
+    <h2 class="wide rv" data-i="doubt.title"></h2>
+    <div class="mid"><p data-i="doubt.a"></p><p data-i="doubt.b"></p></div>
+    <div class="r"><a class="cta ghost" data-wa href="#" target="_blank" rel="noopener" data-cta="doubt.cta"></a></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="chap about wrap">
+  <p class="mono tag" data-i="about.tag"></p>
+  <div class="grid">
+    <div class="mk"><img src="media/marinho.webp" alt="Marinho Connecting Markets" width="374" height="240" loading="lazy"></div>
+    <div class="txt">
+      <p data-i="about.body"></p>
+      <p class="tl" data-i="about.tl"></p>
+    </div>
+  </div>
+  <div class="brands">
+    <figure><div class="lg"><img src="media/skala.webp" alt="SKALA Brasil" class="tall" loading="lazy" width="106" height="75"></div><figcaption data-i="about.b1"></figcaption></figure>
+    <figure><div class="lg"><img src="media/bauducco.webp" alt="Bauducco" loading="lazy" width="172" height="56"></div><figcaption data-i="about.b2"></figcaption></figure>
+    <figure><div class="lg"><img src="media/max.webp" alt="Max Titanium" class="tall" loading="lazy" width="63" height="68"></div><figcaption data-i="about.b3"></figcaption></figure>
+    <figure><div class="lg"><img src="media/starlink.webp" alt="Starlink" loading="lazy" width="112" height="56"></div><figcaption data-i="about.b4"></figcaption></figure>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="chap faq wrap" style="padding-top:0">
+  <div class="grid">
+    <h2 class="wide" data-i="faq.title"></h2>
+    <div class="list" id="faq"></div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final wrap">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="hz" aria-hidden="true"></div>
+  <div class="in">
+    <p class="mono tag" data-i="final.tag"></p>
+    <h2 class="wide rv" data-i="final.title"></h2>
+    <h3 class="rv" data-i="final.sub"></h3>
+    <p class="mono places" data-i="final.places"></p>
+    <div class="bot">
+      <p data-i="final.line"></p>
+      <a class="cta" data-wa href="#" target="_blank" rel="noopener" data-cta="final.cta"></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <div class="r1">
+    <img src="media/marinho.webp" alt="Marinho Connecting Markets" loading="lazy" width="66" height="42">
+    <span class="mono">Connecting brands, markets and opportunities.</span>
+    <span class="mono">WhatsApp +592 666 5260</span>
+  </div>
+  <p class="op" data-i="footer.op"></p>
+</footer>
+
+<div class="review" id="review" hidden></div>
+
+<script>
+(function(){
+document.documentElement.classList.add('js');
+var WA_NUM='5926665260';
+var D={
+en:{
+ 'nav.cta':'Order on WhatsApp',
+ 'hero.kicker':'Starlink · Now in Guyana',
+ h1:['Fast internet','wherever','you are.'],
+ 'hero.sub':'<b>No cables. No fiber. No waiting for your area’s infrastructure.</b> High-speed internet for your home, business, farm or operation, even where traditional internet barely reaches.',
+ 'hero.cta':'I want my Starlink',
+ 'hero.price':'See price · GYD 65,000',
+ 'hero.seller':'Sold in Guyana by Marinho Connecting Markets',
+ 'mani.tag':'Where you live vs. good internet',
+ 'mani.title':'Stop choosing between where you want to be and a good connection.',
+ verbs:['Work.','Stream.','Study.','Video calls.','Run your business.','Family, connected.'],
+ vlabel:'Connected',
+ 'mani.far':'All of it, even far from the big city centres.',
+ 'mani.sky':'With Starlink, the sky becomes part of your connection.',
+ 'pain.tag':'The problem',
+ 'pain.title':'Your internet shouldn’t limit your life.',
+ 'pain.intro':'You pay for internet, and you still deal with this:',
+ 'pain.logTitle':'Network log · this week','pain.logStatus':'● 7 faults',
+ log:[['Connection','UNSTABLE'],['Video stream','BUFFERING'],['Video call','FROZEN'],['Download','TOO SLOW'],['Signal in your area','WEAK'],['Fiber in your area','NOT AVAILABLE'],['Online work / class','DROPPED']],
+ 'pain.pre':'The more your routine depends on the internet, the less each drop is just an annoyance.',
+ 'pain.cost':'It starts costing you <em>time, productivity and opportunities.</em>',
+ 'sol.tag':'The other way',
+ 'sol.title':'There is another way.',
+ 'sol.body':'Instead of depending only on ground infrastructure, Starlink uses a constellation of satellites in low Earth orbit to deliver internet.',
+ 'sol.sub':'Connect directly to the Starlink network.',
+ steps:[['Place it','Install the dish where it has a clear view of the sky.'],['Plug in','Connect the system. Setup is designed to be simple.'],['You’re online','Your home or business now runs on the Starlink network.']],
+ dish:'DISH · CLEAR VIEW OF THE SKY',
+ 'sol.line':'Advanced technology. Practical setup. A new way to be connected.',
+ 'sol.cta':'How to buy',
+ 'alt.tag':'Built by SpaceX',
+ 'alt.title':'Closer to you than any satellite before it.',
+ 'alt.body':'Traditional satellite internet comes from far above the equator. Starlink satellites fly in low Earth orbit, so your data makes a much shorter trip.',
+ 'alt.far':'Geostationary orbit · traditional satellite internet',
+ 'alt.near':'Starlink · low Earth orbit (approx.)',
+ 'alt.byTag':'Technology',
+ 'alt.by':'Starlink is a satellite internet service developed by <b>SpaceX</b>, built to bring high-speed internet to places where traditional connections are limited, expensive or simply not available. <b>Available to customers in Guyana through Marinho Connecting Markets.</b>',
+ 'uses.tag':'Where it fits',
+ 'uses.title':'A connection that keeps up with you.',
+ uses:[['Home','Movies, series, social media, calls, school work. The whole family online.','Georgetown'],['Business','Meetings, systems, sales, communication and online operations that don’t stop.','Linden'],['Remote regions','An option where fiber and other ground infrastructure is limited or missing.','Lethem'],['Work & study','Video calls, file uploads, online platforms. Your productivity, intact.','Bartica'],['Entertainment','Streaming, downloads and online play on a modern high-speed connection.','New Amsterdam']],
+ 'free.tag':'More than internet',
+ 'free.a':'Not just','free.b':'internet.',
+ 'free.sub':'It’s the freedom to be connected where your life happens.',
+ imagine:['Your home far from town, without giving up the connection.','Running your business in a region fiber hasn’t reached yet.','An important meeting that doesn’t depend on the infrastructure around you.'],
+ imagineLabel:'Imagine',
+ 'free.end':'That’s the change Starlink made possible.',
+ 'voices.title':'What changes when internet stops being a worry?',
+ 'voices.badge':'Illustrative testimonials',
+ qs:[['We finally have a much better connection in our area.','Home customer'],['We needed internet to work, and traditional infrastructure didn’t serve our location well.','Business owner'],['Now I take my calls and work online with much more peace of mind.','Remote professional'],['Installation was much simpler than we expected.','Starlink customer'],['For anyone who lives or works far from the city, having this option makes a real difference.','Rural customer']],
+ 'voices.note':'Illustrative testimonials. Experience and performance may vary with location, plan, installation, environmental conditions and service availability.',
+ 'offer.kick':'Starlink<br>in Guyana',
+ 'offer.tag':'The equipment',
+ 'offer.lead':'Compact · Portable · Wi-Fi built in',
+ 'offer.askTitle':'Ask us on WhatsApp',
+ 'offer.note':'Specs from the official Starlink Mini data sheet. Service plan sold separately; availability and speed vary by location.',
+ specs:[['Weight','1.16 kg with kickstand'],['Wi-Fi','Built in · up to 128 devices'],['Power','12–48 V DC or USB-C PD 100 W'],['Weather','IP67 rated'],['Size','Fits in a backpack']],
+ 'alt.geoCap':'Traditional satellite · ≈ 35,786 km up',
+ 'alt.sxCap':'SpaceX · the company behind Starlink',
+ 'offer.title':'Your new connection can start here.',
+ 'offer.body':'Get your Starlink equipment through <b>Marinho Connecting Markets</b>. Talk straight to our team on WhatsApp.',
+ 'offer.cta':'Buy my Starlink',
+ 'offer.priceLabel':'Price','offer.wa':'WhatsApp','offer.copy':'Copy','offer.copied':'Copied',
+ ask:['Available models','Purchase terms','Availability','Equipment guidance'],
+ askLabel:'Ask us',
+ 'doubt.title':'Questions before you buy?',
+ 'doubt.a':'No problem.',
+ 'doubt.b':'Our team will walk you through the product and tell you whether Starlink fits your location.',
+ 'doubt.cta':'Talk to a representative',
+ 'about.tag':'Who brings it to Guyana',
+ 'about.body':'<b>Marinho Connecting Markets</b> connects Guyana to major Brazilian and international brands. We work as commercial representatives, bringing quality, trusted, high-potential products to market with brands like <b>SKALA Brasil, Bauducco, Max Titanium and Starlink.</b>',
+ 'about.tl':'We connect brands, markets and opportunities.',
+ 'about.b1':'Hair care · Brazil','about.b2':'Food · Brazil','about.b3':'Supplements · Brazil','about.b4':'Satellite internet',
+ 'faq.title':'Straight answers.',
+ faq:[['What is Starlink?','Starlink is a satellite internet service developed by SpaceX. It uses satellites in low Earth orbit to provide internet access.'],['Do I need fiber?','No. The connection runs through the Starlink equipment and satellite network, with no fiber line needed at your property.'],['Can I use it in remote areas?','That is one of Starlink’s main uses. Availability and performance depend on location, plan and installation conditions.'],['Do I need a technician to install it?','The system is designed for a fairly simple setup. What matters is placing the dish correctly with a clear view of the sky.'],['Does it work for businesses?','There are Starlink options for different needs and operations. Talk to our team to find the best available option for your case.'],['Can I watch Netflix, YouTube and make video calls?','Starlink is built for modern internet use, including streaming and video calls. Real experience can vary with connection conditions and location.'],['Where can I buy it in Guyana?','Contact Marinho Connecting Markets directly on WhatsApp: +592 666 5260.']],
+ 'final.tag':'Last word',
+ 'final.title':'Stop letting your location decide your internet.',
+ 'final.sub':'Take Starlink where your life happens.',
+ 'final.places':'Home · Business · Work · Study · Remote regions',
+ 'final.line':'A new way to connect starts by looking up at the sky.',
+ 'final.cta':'I want my Starlink',
+ 'footer.op':'This website is operated by Marinho Connecting Markets, commercial representative in Guyana. It is not the official Starlink or SpaceX website. Starlink® and SpaceX® are trademarks of Space Exploration Technologies Corp. Service availability and performance vary by location.',
+ waText:'Hi! I saw your website and I want to know more about Starlink in Guyana.'
+},
+es:{
+ 'nav.cta':'Pedir por WhatsApp',
+ 'hero.kicker':'Starlink · Ya en Guyana',
+ h1:['Internet rápido','donde sea','que estés.'],
+ 'hero.sub':'<b>Sin cables. Sin fibra. Sin esperar la infraestructura de tu zona.</b> Internet de alta velocidad para tu casa, empresa, finca u operación, incluso donde el internet tradicional casi no llega.',
+ 'hero.cta':'Quiero mi Starlink',
+ 'hero.price':'Ver precio · GYD 65,000',
+ 'hero.seller':'Vendido en Guyana por Marinho Connecting Markets',
+ 'mani.tag':'Dónde vives vs. buen internet',
+ 'mani.title':'Deja de elegir entre dónde quieres estar y una buena conexión.',
+ verbs:['Trabajar.','Ver series.','Estudiar.','Videollamadas.','Tu negocio.','Familia conectada.'],
+ vlabel:'Conectado',
+ 'mani.far':'Todo eso, incluso lejos de los grandes centros urbanos.',
+ 'mani.sky':'Con Starlink, el cielo se vuelve parte de tu conexión.',
+ 'pain.tag':'El problema',
+ 'pain.title':'Tu internet no debería limitar tu vida.',
+ 'pain.intro':'Pagas internet y aun así lidias con esto:',
+ 'pain.logTitle':'Registro de red · esta semana','pain.logStatus':'● 7 fallas',
+ log:[['Conexión','INESTABLE'],['Video','CARGANDO'],['Videollamada','CONGELADA'],['Descarga','MUY LENTA'],['Señal en tu zona','DÉBIL'],['Fibra en tu zona','NO DISPONIBLE'],['Trabajo / clase online','CAÍDA']],
+ 'pain.pre':'Mientras más depende tu rutina de internet, menos es cada caída una simple molestia.',
+ 'pain.cost':'Empieza a costarte <em>tiempo, productividad y oportunidades.</em>',
+ 'sol.tag':'El otro camino',
+ 'sol.title':'Hay otro camino.',
+ 'sol.body':'En lugar de depender solo de la infraestructura terrestre, Starlink usa una constelación de satélites en órbita baja para darte internet.',
+ 'sol.sub':'Conéctate directamente a la red Starlink.',
+ steps:[['Ubícala','Instala la antena donde tenga vista despejada del cielo.'],['Conéctala','Conecta el sistema. La instalación está pensada para ser simple.'],['Ya estás en línea','Tu casa o negocio funciona sobre la red Starlink.']],
+ dish:'ANTENA · CIELO DESPEJADO',
+ 'sol.line':'Tecnología avanzada. Instalación práctica. Una nueva forma de estar conectado.',
+ 'sol.cta':'Cómo comprar',
+ 'alt.tag':'Creado por SpaceX',
+ 'alt.title':'Más cerca de ti que cualquier satélite anterior.',
+ 'alt.body':'El internet satelital tradicional viene de muy alto sobre el ecuador. Los satélites Starlink vuelan en órbita baja, así tus datos hacen un viaje mucho más corto.',
+ 'alt.far':'Órbita geoestacionaria · internet satelital tradicional',
+ 'alt.near':'Starlink · órbita baja (aprox.)',
+ 'alt.byTag':'Tecnología',
+ 'alt.by':'Starlink es un servicio de internet satelital desarrollado por <b>SpaceX</b>, creado para llevar internet de alta velocidad a lugares donde las conexiones tradicionales son limitadas, caras o simplemente no existen. <b>Disponible para clientes en Guyana a través de Marinho Connecting Markets.</b>',
+ 'uses.tag':'Dónde encaja',
+ 'uses.title':'Una conexión al ritmo de tu vida.',
+ uses:[['Casa','Películas, series, redes, llamadas, tareas. Toda la familia en línea.','Georgetown'],['Negocio','Reuniones, sistemas, ventas, comunicación y operaciones online sin pausa.','Linden'],['Zonas remotas','Una opción donde la fibra y otras redes terrestres son limitadas o no existen.','Lethem'],['Trabajo y estudio','Videollamadas, archivos, plataformas online. Tu productividad, intacta.','Bartica'],['Entretenimiento','Streaming, descargas y juegos online con una conexión moderna de alta velocidad.','New Amsterdam']],
+ 'free.tag':'Más que internet',
+ 'free.a':'No es solo','free.b':'internet.',
+ 'free.sub':'Es la libertad de estar conectado donde tu vida sucede.',
+ imagine:['Tu casa lejos del centro, sin renunciar a la conexión.','Manejar tu negocio en una zona adonde la fibra aún no llegó.','Una reunión importante que no depende de la infraestructura a tu alrededor.'],
+ imagineLabel:'Imagina',
+ 'free.end':'Ese es el cambio que Starlink hizo posible.',
+ 'voices.title':'¿Qué cambia cuando el internet deja de ser una preocupación?',
+ 'voices.badge':'Testimonios ilustrativos',
+ qs:[['Por fin tenemos una conexión mucho mejor en nuestra zona.','Cliente residencial'],['Necesitábamos internet para trabajar y la infraestructura tradicional no llegaba bien a nuestra ubicación.','Empresario'],['Hoy hago mis llamadas y trabajo online con mucha más tranquilidad.','Profesional remoto'],['La instalación fue mucho más simple de lo que imaginábamos.','Cliente Starlink'],['Para quien vive o trabaja lejos de la ciudad, tener esta alternativa hace mucha diferencia.','Cliente rural']],
+ 'voices.note':'Testimonios ilustrativos. La experiencia y el rendimiento pueden variar según ubicación, plan, instalación, condiciones ambientales y disponibilidad del servicio.',
+ 'offer.kick':'Starlink<br>en Guyana',
+ 'offer.tag':'El equipo',
+ 'offer.lead':'Compacta · Portátil · Wi-Fi integrado',
+ 'offer.askTitle':'Pregúntanos por WhatsApp',
+ 'offer.note':'Especificaciones de la ficha técnica oficial de Starlink Mini. El plan de servicio se contrata aparte; disponibilidad y velocidad varían según la ubicación.',
+ specs:[['Peso','1,16 kg con soporte'],['Wi-Fi','Integrado · hasta 128 dispositivos'],['Energía','12–48 V CC o USB-C PD 100 W'],['Clima','Certificación IP67'],['Tamaño','Cabe en una mochila']],
+ 'alt.geoCap':'Satélite tradicional · ≈ 35.786 km de altura',
+ 'alt.sxCap':'SpaceX · la empresa detrás de Starlink',
+ 'offer.title':'Tu nueva conexión puede empezar aquí.',
+ 'offer.body':'Adquiere tu equipo Starlink con <b>Marinho Connecting Markets</b>. Habla directo con nuestro equipo por WhatsApp.',
+ 'offer.cta':'Comprar mi Starlink',
+ 'offer.priceLabel':'Precio','offer.wa':'WhatsApp','offer.copy':'Copiar','offer.copied':'Copiado',
+ ask:['Modelos disponibles','Condiciones de compra','Disponibilidad','Orientación sobre el equipo'],
+ askLabel:'Pregúntanos',
+ 'doubt.title':'¿Dudas antes de comprar?',
+ 'doubt.a':'Sin problema.',
+ 'doubt.b':'Nuestro equipo te orienta sobre el producto y te dice si Starlink se adapta a tu ubicación.',
+ 'doubt.cta':'Hablar con un representante',
+ 'about.tag':'Quién la trae a Guyana',
+ 'about.body':'<b>Marinho Connecting Markets</b> conecta Guyana con grandes marcas brasileñas e internacionales. Somos representantes comerciales y llevamos al mercado productos de calidad, confianza y alto potencial, con marcas como <b>SKALA Brasil, Bauducco, Max Titanium y Starlink.</b>',
+ 'about.tl':'Conectamos marcas, mercados y oportunidades.',
+ 'about.b1':'Cuidado capilar · Brasil','about.b2':'Alimentos · Brasil','about.b3':'Suplementos · Brasil','about.b4':'Internet satelital',
+ 'faq.title':'Respuestas directas.',
+ faq:[['¿Qué es Starlink?','Starlink es un servicio de internet satelital desarrollado por SpaceX. Usa satélites en órbita baja para dar acceso a internet.'],['¿Necesito fibra óptica?','No. La conexión funciona con el equipo Starlink y la red de satélites, sin necesidad de fibra hasta tu propiedad.'],['¿Puedo usarlo en zonas remotas?','Es uno de los usos principales de Starlink. La disponibilidad y el rendimiento dependen de la ubicación, el plan y la instalación.'],['¿Necesito un técnico para instalarlo?','El sistema está pensado para una instalación bastante simple. Lo importante es ubicar bien la antena con vista despejada del cielo.'],['¿Sirve para empresas?','Hay opciones Starlink para distintas necesidades y operaciones. Habla con nuestro equipo para ver la mejor opción disponible para tu caso.'],['¿Puedo ver Netflix, YouTube y hacer videollamadas?','Starlink está hecho para el uso moderno de internet, incluido streaming y videollamadas. La experiencia real puede variar según la conexión y la ubicación.'],['¿Dónde compro en Guyana?','Contacta directamente a Marinho Connecting Markets por WhatsApp: +592 666 5260.']],
+ 'final.tag':'Última palabra',
+ 'final.title':'Que tu ubicación no decida tu internet.',
+ 'final.sub':'Lleva Starlink donde tu vida sucede.',
+ 'final.places':'Casa · Empresa · Trabajo · Estudio · Zonas remotas',
+ 'final.line':'Una nueva forma de conectarte empieza mirando al cielo.',
+ 'final.cta':'Quiero mi Starlink',
+ 'footer.op':'Este sitio es operado por Marinho Connecting Markets, representante comercial en Guyana. No es el sitio oficial de Starlink ni de SpaceX. Starlink® y SpaceX® son marcas de Space Exploration Technologies Corp. La disponibilidad y el rendimiento del servicio varían según la ubicación.',
+ waText:'¡Hola! Vi su sitio web y quiero saber más sobre Starlink en Guyana.'
+},
+pt:{
+ 'nav.cta':'Pedir no WhatsApp',
+ 'hero.kicker':'Starlink · Agora na Guiana',
+ h1:['Internet rápida','onde você','precisa.'],
+ 'hero.sub':'<b>Sem cabos. Sem fibra. Sem depender da infraestrutura da sua região.</b> Internet de alta velocidade para sua casa, empresa, fazenda ou operação, mesmo onde a internet tradicional não chega bem.',
+ 'hero.cta':'Quero minha Starlink',
+ 'hero.price':'Ver valor · GYD 65,000',
+ 'hero.seller':'Vendida na Guiana pela Marinho Connecting Markets',
+ 'mani.tag':'Onde você mora vs. internet boa',
+ 'mani.title':'Pare de escolher entre onde você quer estar e uma boa conexão.',
+ verbs:['Trabalhar.','Assistir.','Estudar.','Videochamadas.','Seu negócio.','Família conectada.'],
+ vlabel:'Conectado',
+ 'mani.far':'Tudo isso mesmo longe dos grandes centros urbanos.',
+ 'mani.sky':'Com a Starlink, o céu se torna parte da sua conexão.',
+ 'pain.tag':'O problema',
+ 'pain.title':'Sua internet não deveria limitar sua vida.',
+ 'pain.intro':'Você paga por internet e ainda precisa lidar com isso:',
+ 'pain.logTitle':'Log da rede · esta semana','pain.logStatus':'● 7 falhas',
+ log:[['Conexão','INSTÁVEL'],['Vídeo','TRAVANDO'],['Chamada','CONGELADA'],['Download','DEMORADO'],['Sinal na sua região','RUIM'],['Fibra na sua região','INDISPONÍVEL'],['Trabalho / aula online','CAIU']],
+ 'pain.pre':'Quanto mais sua rotina depende da internet, mais cada queda deixa de ser só um incômodo.',
+ 'pain.cost':'Ela começa a custar <em>tempo, produtividade e oportunidades.</em>',
+ 'sol.tag':'O outro caminho',
+ 'sol.title':'Existe outro caminho.',
+ 'sol.body':'Em vez de depender só da infraestrutura terrestre, a Starlink usa uma constelação de satélites em órbita baixa para fornecer internet.',
+ 'sol.sub':'Conecte-se diretamente à rede Starlink.',
+ steps:[['Posicione','Instale a antena num local com visão adequada do céu.'],['Conecte','Ligue o sistema. A instalação foi pensada para ser prática.'],['Pronto, online','Sua casa ou empresa passa a acessar a rede Starlink.']],
+ dish:'ANTENA · VISÃO LIVRE DO CÉU',
+ 'sol.line':'Tecnologia avançada. Instalação prática. Uma nova forma de estar conectado.',
+ 'sol.cta':'Como comprar',
+ 'alt.tag':'Criada pela SpaceX',
+ 'alt.title':'Mais perto de você que qualquer satélite antes dela.',
+ 'alt.body':'A internet via satélite tradicional vem de muito alto, sobre a linha do equador. Os satélites Starlink voam em órbita baixa, então seus dados fazem um caminho bem mais curto.',
+ 'alt.far':'Órbita geoestacionária · internet via satélite tradicional',
+ 'alt.near':'Starlink · órbita baixa (aprox.)',
+ 'alt.byTag':'Tecnologia',
+ 'alt.by':'A Starlink é um serviço de internet via satélite desenvolvido pela <b>SpaceX</b>, criado para levar internet de alta velocidade a lugares onde conexões tradicionais são limitadas, caras ou simplesmente não existem. <b>Disponível para clientes na Guiana através da Marinho Connecting Markets.</b>',
+ 'uses.tag':'Onde se encaixa',
+ 'uses.title':'Uma conexão que acompanha sua rotina.',
+ uses:[['Casa','Filmes, séries, redes sociais, chamadas, estudos. A família toda conectada.','Georgetown'],['Negócio','Reuniões, sistemas, vendas, comunicação e operações online sem parar.','Linden'],['Regiões afastadas','Uma alternativa onde fibra e outras estruturas terrestres são limitadas ou não existem.','Lethem'],['Trabalho e estudo','Videochamadas, envio de arquivos, plataformas. Sua produtividade, intacta.','Bartica'],['Entretenimento','Streaming, downloads e jogos online com conexão moderna de alta velocidade.','New Amsterdam']],
+ 'free.tag':'Mais que internet',
+ 'free.a':'Não é só','free.b':'internet.',
+ 'free.sub':'É a liberdade de estar conectado onde sua vida acontece.',
+ imagine:['Sua casa longe do centro sem abrir mão da conexão.','Administrar seu negócio numa região onde a fibra ainda não chegou.','Uma reunião importante sem depender da infraestrutura ao redor.'],
+ imagineLabel:'Imagine',
+ 'free.end':'Essa é a mudança que a Starlink tornou possível.',
+ 'voices.title':'O que muda quando a internet deixa de ser uma preocupação?',
+ 'voices.badge':'Depoimentos ilustrativos',
+ qs:[['Finalmente conseguimos ter uma conexão muito melhor na nossa região.','Cliente residencial'],['Precisávamos de internet para trabalhar e a infraestrutura tradicional não atendia bem nossa localização.','Empresário'],['Hoje consigo fazer minhas chamadas e trabalhar online com muito mais tranquilidade.','Profissional remoto'],['A instalação foi muito mais simples do que imaginávamos.','Cliente Starlink'],['Para quem vive ou trabalha longe dos grandes centros, faz muita diferença ter essa alternativa.','Cliente rural']],
+ 'voices.note':'Depoimentos ilustrativos. Experiências e desempenho podem variar conforme localização, plano, instalação, condições ambientais e disponibilidade do serviço.',
+ 'offer.kick':'Starlink<br>na Guiana',
+ 'offer.tag':'O equipamento',
+ 'offer.lead':'Compacta · Portátil · Wi-Fi integrado',
+ 'offer.askTitle':'Consulte pelo WhatsApp',
+ 'offer.note':'Especificações da ficha técnica oficial da Starlink Mini. O plano de serviço é contratado à parte; disponibilidade e velocidade variam conforme a localização.',
+ specs:[['Peso','1,16 kg com suporte'],['Wi-Fi','Integrado · até 128 aparelhos'],['Energia','12–48 V CC ou USB-C PD 100 W'],['Clima','Certificação IP67'],['Tamanho','Cabe na mochila']],
+ 'alt.geoCap':'Satélite tradicional · ≈ 35.786 km de altura',
+ 'alt.sxCap':'SpaceX · a empresa por trás da Starlink',
+ 'offer.title':'Sua nova conexão pode começar aqui.',
+ 'offer.body':'Adquira seu equipamento Starlink através da <b>Marinho Connecting Markets</b>. Fale direto com nossa equipe pelo WhatsApp.',
+ 'offer.cta':'Quero comprar minha Starlink',
+ 'offer.priceLabel':'Valor','offer.wa':'WhatsApp','offer.copy':'Copiar','offer.copied':'Copiado',
+ ask:['Modelos disponíveis','Condições de compra','Disponibilidade','Orientações sobre o equipamento'],
+ askLabel:'Consulte',
+ 'doubt.title':'Dúvidas antes de comprar?',
+ 'doubt.a':'Sem problema.',
+ 'doubt.b':'Nossa equipe orienta você sobre o produto e diz se a Starlink atende a sua localização.',
+ 'doubt.cta':'Falar com um representante',
+ 'about.tag':'Quem traz para a Guiana',
+ 'about.body':'A <b>Marinho Connecting Markets</b> conecta a Guiana a grandes marcas brasileiras e internacionais. Atuamos como representantes comerciais, levando ao mercado produtos de qualidade, confiança e alto potencial, com marcas como <b>SKALA Brasil, Bauducco, Max Titanium e Starlink.</b>',
+ 'about.tl':'Conectamos marcas, mercados e oportunidades.',
+ 'about.b1':'Cabelos · Brasil','about.b2':'Alimentos · Brasil','about.b3':'Suplementos · Brasil','about.b4':'Internet via satélite',
+ 'faq.title':'Respostas diretas.',
+ faq:[['O que é Starlink?','Starlink é um serviço de internet via satélite desenvolvido pela SpaceX. O sistema usa satélites em órbita baixa para fornecer conexão à internet.'],['Precisa de fibra óptica?','Não. A conexão é feita pelo equipamento Starlink e pela rede de satélites, sem depender de fibra chegando ao imóvel.'],['Posso usar em regiões afastadas?','Essa é uma das principais aplicações da Starlink. A disponibilidade e o desempenho dependem da localização, do plano e das condições de instalação.'],['Precisa de técnico para instalar?','O sistema foi feito para uma instalação relativamente simples. O importante é posicionar bem o equipamento, com visão adequada do céu.'],['Funciona para empresas?','Existem soluções Starlink para diferentes necessidades e operações. Fale com nossa equipe para ver a opção disponível mais adequada ao seu caso.'],['Posso assistir Netflix, YouTube e fazer videochamadas?','A Starlink foi feita para o uso moderno da internet, incluindo streaming e videochamadas. A experiência real pode variar conforme a conexão e a localização.'],['Onde comprar na Guiana?','Fale diretamente com a Marinho Connecting Markets pelo WhatsApp: +592 666 5260.']],
+ 'final.tag':'Última palavra',
+ 'final.title':'Pare de deixar sua localização decidir sua internet.',
+ 'final.sub':'Leve a Starlink para onde sua vida acontece.',
+ 'final.places':'Casa · Empresa · Trabalho · Estudos · Regiões afastadas',
+ 'final.line':'Uma nova maneira de se conectar começa olhando para o céu.',
+ 'final.cta':'Quero minha Starlink',
+ 'footer.op':'Este site é operado pela Marinho Connecting Markets, representante comercial na Guiana. Não é o site oficial da Starlink nem da SpaceX. Starlink® e SpaceX® são marcas da Space Exploration Technologies Corp. Disponibilidade e desempenho variam conforme a localização.',
+ waText:'Olá! Vi o site e quero saber mais sobre a Starlink na Guiana.',
+ review:'Versão PT · só para revisão interna · não publicar'
+}};
+
+var ARROW='<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.6"/></svg>';
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+function pick(){
+  if(/(^|#)pt\b/i.test(location.hash))return 'pt';
+  try{var s=localStorage.getItem('lang');if(s==='en'||s==='es')return s}catch(e){}
+  var ls=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en']);
+  for(var i=0;i<ls.length;i++){var l=(ls[i]||'').toLowerCase();if(l.indexOf('es')===0)return 'es';if(l.indexOf('en')===0)return 'en'}
+  return 'en';
+}
+
+var lang;
+function render(L){
+  lang=L;var t=D[L];
+  document.documentElement.lang=L==='pt'?'pt-BR':L;
+  document.querySelectorAll('[data-i]').forEach(function(el){var k=el.getAttribute('data-i');if(t[k]!=null)el.innerHTML=t[k]});
+  document.querySelectorAll('[data-cta]').forEach(function(el){var s=esc(t[el.getAttribute('data-cta')]);el.innerHTML='<span class="t"><span>'+s+'</span><span aria-hidden="true">'+s+'</span></span><span class="ar">'+ARROW+'</span>'});
+  var wa='https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(t.waText);
+  document.querySelectorAll('[data-wa]').forEach(function(a){a.href=wa});
+  document.getElementById('h1').innerHTML=t.h1.map(function(x){return '<span class="l"><span>'+esc(x)+'</span></span>'}).join('');
+  document.getElementById('verbs').innerHTML=t.verbs.map(function(v,i){return '<li class="wide"><span>'+esc(v)+'</span><span class="mono">'+esc(t.vlabel)+' · 0'+(i+1)+'</span></li>'}).join('');
+  var times=['07:12:44','09:31:05','11:02:58','13:47:19','16:20:33','18:05:41','20:14:07'];
+  document.getElementById('log').innerHTML=t.log.map(function(r,i){return '<li><span class="ts">'+times[i]+'</span><span class="ev">'+esc(r[0])+'</span><span class="st">'+esc(r[1])+'</span></li>'}).join('');
+  document.getElementById('steps').innerHTML=t.steps.map(function(s,i){return '<li class="rv"><span class="n">0'+(i+1)+'</span><h4>'+esc(s[0])+'</h4><p>'+esc(s[1])+'</p></li>'}).join('');
+  document.getElementById('lblDish').textContent=t.dish;
+  document.getElementById('uses').innerHTML=t.uses.map(function(u){return '<li><span class="mono">'+esc(u[2])+'</span><h3 class="wide">'+esc(u[0])+'</h3><p>'+esc(u[1])+'</p></li>'}).join('');
+  document.getElementById('imagine').innerHTML=t.imagine.map(function(x,i){return '<p class="rv">'+esc(x)+'</p>'}).join('');
+  document.getElementById('qs').innerHTML=t.qs.map(function(q){return '<figure class="q rv"><blockquote>'+esc(q[0])+'</blockquote><figcaption class="mono">— '+esc(q[1])+'</figcaption></figure>'}).join('');
+  document.getElementById('ask').innerHTML=t.ask.map(function(a){return '<li>'+esc(a)+'</li>'}).join('');
+  document.getElementById('specs').innerHTML=t.specs.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>'}).join('');
+  document.getElementById('faq').innerHTML=t.faq.map(function(f,i){return '<details id="faq-'+i+'"><summary>'+esc(f[0])+'<span class="pl" aria-hidden="true"></span></summary><p>'+esc(f[1])+'</p></details>'}).join('');
+  var rv=document.getElementById('review');
+  if(L==='pt'){rv.hidden=false;rv.textContent=t.review}else rv.hidden=true;
+  var langs=['en','es'].concat(L==='pt'?['pt']:[]);
+  document.getElementById('langs').innerHTML=langs.map(function(x){return '<button type="button" data-l="'+x+'" aria-pressed="'+(x===L)+'">'+x.toUpperCase()+'</button>'}).join('');
+  observe();
+}
+document.getElementById('langs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var l=b.getAttribute('data-l');if(l!=='pt'){try{localStorage.setItem('lang',l)}catch(_){} if(location.hash.toLowerCase()==='#pt')history.replaceState(null,'',location.pathname+location.search)}render(l)});
+window.addEventListener('hashchange',function(){render(pick())});
+
+/* copy */
+document.getElementById('copy').addEventListener('click',function(){var b=this;function done(){b.textContent=D[lang]['offer.copied'];setTimeout(function(){b.textContent=D[lang]['offer.copy']},1800)}
+  try{navigator.clipboard.writeText('+592 666 5260').then(done,function(){sel()})}catch(e){sel()}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('num'));var s=getSelection();s.removeAllRanges();s.addRange(r)}});
+
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* reveal */
+var io;
+function observe(){
+  if(RM||!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});return}
+  if(io)io.disconnect();
+  io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv:not(.in)').forEach(function(e){io.observe(e)});
+}
+
+/* header + verbs light-up + altitude counter */
+var bar=document.getElementById('bar'),nearEl=document.getElementById('near'),counted=false;
+function onScroll(){
+  bar.classList.toggle('solid',scrollY>40);
+  var vh=innerHeight;
+  document.querySelectorAll('#verbs li').forEach(function(li){var r=li.getBoundingClientRect();li.classList.toggle('on',r.top<vh*.62)});
+  if(!counted){var r=nearEl.getBoundingClientRect();if(r.top<vh*.85){counted=true;if(!RM){var t0=performance.now();(function f(n){var p=Math.min(1,(n-t0)/1600),e=1-Math.pow(1-p,4);nearEl.textContent=Math.round(35786-(35786-550)*e).toLocaleString('en-US');if(p<1)requestAnimationFrame(f)})(t0)}}}
+}
+addEventListener('scroll',onScroll,{passive:true});
+
+/* magnetic CTAs */
+if(!RM&&matchMedia('(pointer:fine)').matches){
+  document.addEventListener('pointermove',function(e){var b=e.target.closest&&e.target.closest('.cta');document.querySelectorAll('.cta').forEach(function(c){if(c!==b)c.style.transform=''});if(!b)return;var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.12)+'px,'+((e.clientY-r.top-r.height/2)*.22)+'px)'});
+}
+
+/* beam satellite */
+(function(){var p=document.getElementById('orb'),s=document.getElementById('sat'),ray=document.getElementById('ray');if(!p.getTotalLength)return;var L=p.getTotalLength();
+  function at(f){var pt=p.getPointAtLength(L*f);s.setAttribute('transform','translate('+pt.x+' '+pt.y+')');ray.setAttribute('x2',pt.x);ray.setAttribute('y2',pt.y+4)}
+  if(RM){at(.48);return}var t0=performance.now();(function f(n){at(((n-t0)/14000)%1);requestAnimationFrame(f)})(t0)})();
+
+/* hero parallax */
+(function(){var im=document.getElementById('heroImg');if(RM||!im)return;var tk=false;addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){var y=Math.min(scrollY,innerHeight);im.style.translate='0 '+(y*.18)+'px';tk=false})},{passive:true})})();
+
+render(pick());onScroll();
+})();
+</script>
+
+</body></html>
