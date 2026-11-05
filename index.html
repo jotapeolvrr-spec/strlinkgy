@@ -16,11 +16,11 @@
   --star:#eef1f6;
   --mute:#8b93a7;
   --line:rgba(238,241,246,.13);
-  --dawn:#c9ced5;
+  --dawn:#f2b544;
   --sun:#f2b544;
   --steel:#c9ced5;
   --metal:linear-gradient(100deg,#727982 0%,#dfe3e8 20%,#9aa1aa 36%,#f5f7f9 50%,#8e959e 66%,#d3d8de 82%,#7b828b 100%);
-  --ember:#6d747e;
+  --ember:#e0683d;
   --fault:#d9654b;
   --limb:#3d8bff;
   --paper:#ffffff;
@@ -63,14 +63,14 @@ p{margin:0}
 .langs{display:flex;gap:2px;font-family:var(--mono);font-size:11px;letter-spacing:.12em}
 .langs button{background:none;border:0;color:var(--mute);padding:8px 8px;cursor:pointer;font:inherit;letter-spacing:inherit}
 .langs button[aria-pressed="true"]{color:var(--star);text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--dawn)}
-.bar .wa{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:10px 16px;border:1px solid var(--line);transition:background .3s,color .3s,border-color .3s}
-.bar .wa:hover{background:var(--star);color:var(--night);border-color:var(--star)}
+.bar .wa{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:11px 20px;border-radius:999px;background:var(--metal);color:var(--night);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 8px 20px -10px rgba(0,0,0,.8);transition:filter .3s}
+.bar .wa:hover{filter:brightness(1.12)}
 
 /* review banner */
 .review{position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--dawn);color:var(--night);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px var(--gut) calc(8px + env(safe-area-inset-bottom,0px));text-align:center}
 
 /* buttons */
-.cta{--h:64px;position:relative;display:inline-flex;align-items:center;gap:18px;height:var(--h);padding:0 12px 0 28px;background:var(--metal);background-size:200% 100%;background-position:0 0;color:var(--night);border-radius:4px;box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(0,0,0,.25),0 14px 30px -14px rgba(0,0,0,.8);cursor:pointer;text-decoration:none;font-family:var(--display);font-stretch:112%;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:15px;overflow:hidden;isolation:isolate;transition:transform .5s var(--ease)}
+.cta{--h:64px;position:relative;display:inline-flex;align-items:center;gap:18px;height:var(--h);padding:0 10px 0 30px;background:var(--metal);background-size:200% 100%;background-position:0 0;color:var(--night);border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(0,0,0,.25),0 14px 30px -14px rgba(0,0,0,.8);cursor:pointer;text-decoration:none;font-family:var(--display);font-stretch:112%;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:15px;overflow:hidden;isolation:isolate;transition:transform .5s var(--ease)}
 .cta::before{content:"";position:absolute;inset:0;background:var(--star);transform:translateY(101%);transition:transform .6s var(--ease);z-index:-1}
 .cta:hover::before{transform:none}
 .cta .t{display:grid;overflow:hidden;height:1.2em;line-height:1.2em}
@@ -79,7 +79,7 @@ p{margin:0}
 .cta:hover .t span:first-child{transform:translateY(-100%)}
 .cta:hover .t span+span{transform:none}
 .cta .t{position:relative}
-.cta .ar{border-radius:3px;width:40px;height:40px;display:grid;place-items:center;background:var(--night);color:var(--star);overflow:hidden;position:relative}
+.cta .ar{border-radius:50%;width:44px;height:44px;display:grid;place-items:center;background:var(--night);color:var(--star);overflow:hidden;position:relative}
 .cta .ar svg{transition:transform .6s var(--ease)}
 .cta:hover .ar svg{transform:translateX(3px) rotate(-45deg)}
 .cta.ghost{background:transparent;color:var(--star);box-shadow:inset 0 0 0 1px var(--line)}
@@ -111,7 +111,18 @@ p{margin:0}
 .flagline svg{width:25px;height:15px;flex:none;display:block}
 
 /* metallic text */
-.metal,.steps .n,.pain .cost em,.final h3,.price .amt small,.oname span{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hl{background:var(--dawn);color:var(--night);padding:.06em .28em;-webkit-box-decoration-break:clone;box-decoration-break:clone;font-weight:600}
+.hero h1 em,.mani h2 em{font-style:normal;color:var(--dawn)}
+.verbs li.on:last-child{color:var(--dawn)}
+.sol h3 .hl{font-weight:700}
+.ask .pre{color:var(--ink);background:#fff4dc;border-left:3px solid var(--dawn);padding:10px 12px}
+.acc{padding-block:clamp(72px,9vw,130px);border-bottom:1px solid var(--line)}
+.ahead{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.acc h2{font-size:clamp(34px,4.4vw,72px)}
+.aslots{margin-top:clamp(32px,4vw,56px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.slot{aspect-ratio:4/3;border:1px dashed rgba(238,241,246,.22);border-radius:14px;display:grid;place-items:center}
+@media (max-width:700px){.aslots{grid-template-columns:1fr 1fr}.slot:last-child{display:none}}
+.metal,.price .amt small,.oname span{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
 .offer .price .amt small,.offer .oname span{background:linear-gradient(100deg,#4d535c,#a9b0b9 30%,#5e656e 55%,#9aa1aa 80%,#4d535c);-webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* chapters */
@@ -131,7 +142,7 @@ section{position:relative}
 .verbs li.on .mono{opacity:1;color:var(--dawn)}
 .verbs ul{padding:0;margin:0}
 .mani .close{margin-top:clamp(40px,6vw,80px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
-.mani .close p:first-child{grid-column:1 / span 8;font-family:var(--display);font-stretch:110%;font-weight:600;font-size:clamp(22px,2.4vw,34px);line-height:1.2;color:var(--star)}
+.mani .close p:first-child{grid-column:1 / span 8;font-family:var(--display);font-stretch:110%;font-weight:600;font-size:clamp(22px,2.4vw,34px);line-height:1.45;color:var(--star)}
 .mani .close p:last-child{grid-column:7 / -1;font-family:var(--display);font-stretch:110%;font-weight:600;font-size:clamp(22px,2.4vw,34px);line-height:1.15}
 
 /* pain */
@@ -165,9 +176,9 @@ section{position:relative}
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line)}
 .steps li{list-style:none;padding:28px 28px 36px 0;display:flex;flex-direction:column;gap:14px}
 .steps li+li{padding-left:28px;border-left:1px solid var(--line)}
-.steps .n{font-family:var(--display);font-stretch:62%;font-weight:700;font-size:64px;line-height:1;color:var(--dawn)}
-.steps h4{margin:0;font-family:var(--display);font-stretch:115%;font-weight:700;text-transform:uppercase;font-size:18px;letter-spacing:.01em}
-.steps p{color:var(--mute);font-size:15.5px;max-width:34ch}
+.steps .n{font-family:var(--display);font-stretch:100%;font-weight:900;font-size:clamp(64px,6vw,96px);line-height:.9;color:var(--star)}
+.steps h4{margin:0;font-family:var(--display);font-stretch:115%;font-weight:800;text-transform:uppercase;font-size:clamp(20px,1.8vw,26px);letter-spacing:.01em;color:var(--dawn)}
+.steps p{font-size:clamp(16px,1.3vw,19px);line-height:1.6;max-width:30ch}
 .steps{padding:0;margin:0}
 .sol .row{margin-top:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .sol .row p{font-family:var(--display);font-stretch:112%;font-weight:600;font-size:clamp(18px,1.6vw,22px);max-width:40ch}
@@ -231,8 +242,8 @@ section{position:relative}
 .alt .figs{margin-top:clamp(56px,8vw,120px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
 .fig{display:flex;flex-direction:column;gap:12px}
 .fig .num{font-size:clamp(64px,13vw,240px);font-variant-numeric:tabular-nums;white-space:nowrap}
-.fig.far{grid-column:1 / span 7;color:rgba(238,241,246,.22)}
-.fig.far .num{-webkit-text-stroke:1px rgba(238,241,246,.35);color:transparent}
+.fig.far{grid-column:1 / span 7;color:var(--dawn)}
+.fig.far .num{-webkit-text-stroke:1.5px var(--dawn);color:transparent}
 .fig.near{grid-column:6 / -1;text-align:right;align-items:flex-end;margin-top:clamp(20px,4vw,60px)}
 .fig.near .num{color:var(--star)}
 .fig.near .num small,.fig.far .num small{font-size:.32em;letter-spacing:0;margin-left:.08em}
@@ -259,7 +270,7 @@ section{position:relative}
 /* freedom */
 .free{overflow:hidden}
 .free .big{font-size:clamp(56px,12vw,230px);white-space:nowrap}
-.free .big.o{color:transparent;-webkit-text-stroke:1px rgba(238,241,246,.4);padding-left:clamp(0px,10vw,200px)}
+.free .big.o{color:transparent;-webkit-text-stroke:1.5px var(--dawn);padding-left:clamp(0px,10vw,200px)}
 .free h3{margin-top:clamp(36px,5vw,64px);font-family:var(--display);font-stretch:110%;font-weight:600;font-size:clamp(24px,2.8vw,42px);line-height:1.15;max-width:22ch;margin-left:auto}
 .imagine{margin-top:clamp(60px,8vw,120px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
 .imagine p{padding:28px 28px 0 0;font-size:clamp(18px,1.5vw,21px);line-height:1.45}
@@ -283,6 +294,7 @@ section{position:relative}
 .q:nth-child(4){grid-column:8 / span 4}
 .q:nth-child(5){grid-column:4 / span 7}
 .q:nth-child(5) blockquote{font-size:clamp(26px,3vw,46px)}
+.q .qn{color:var(--dawn)}
 .disc-note{margin-top:clamp(48px,6vw,80px);max-width:70ch;color:var(--mute);font-size:13.5px}
 
 /* offer · product sheet */
@@ -297,18 +309,14 @@ section{position:relative}
 .js .prod.rv{opacity:1;transform:translateX(8%) rotate(-1.5deg);transition:transform 1.8s var(--ease)}
 .js .prod.rv.in{transform:none}
 .offer .grid{margin-top:clamp(40px,5vw,72px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start;border-top:1px solid var(--ink);padding-top:36px}
-.offer .left{grid-column:1 / span 6;display:flex;flex-direction:column;gap:26px}
+.offer .left{grid-column:1 / span 6;display:flex;flex-direction:column;align-items:flex-start;gap:26px}
+.offer .cta{box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(0,0,0,.25),0 14px 30px -14px rgba(5,7,13,.55)}
 .offer .left h2{font-family:var(--display);font-stretch:112%;font-weight:700;text-transform:uppercase;font-size:clamp(24px,2.6vw,40px);line-height:1.04;max-width:18ch}
 .offer .lede{color:var(--ink-mute)}
 .offer .lede b{color:var(--ink)}
 .price{display:flex;flex-direction:column;gap:6px}
 .price .amt{font-size:clamp(56px,8vw,128px);font-variant-numeric:tabular-nums;line-height:.9;display:flex;align-items:flex-end;gap:.14em;color:var(--ink)}
 .price .amt small{font-family:var(--display);font-stretch:125%;font-size:.3em;font-weight:800;letter-spacing:.02em;margin-bottom:.12em}
-.offer .cta{background:var(--ink);color:var(--paper)}
-.offer .cta{background:var(--ink);box-shadow:0 14px 30px -14px rgba(5,7,13,.6)}
-.offer .cta::before{background:#2a2f38}
-.offer .cta:hover{color:var(--paper)!important}
-.offer .cta .ar{background:var(--metal);color:var(--ink)}
 
 .side{grid-column:8 / -1;display:flex;flex-direction:column;gap:40px}
 .specs{margin:0;display:grid;grid-template-columns:auto 1fr;border-top:1px solid rgba(5,7,13,.14)}
@@ -334,7 +342,7 @@ section{position:relative}
 .offer :focus-visible{outline-color:var(--ember)}
 .phone{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .phone .num{font-family:var(--mono);font-size:18px;letter-spacing:.04em;user-select:all}
-.copy{background:none;border:1px solid var(--line);color:var(--mute);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;cursor:pointer;transition:color .3s,border-color .3s}
+.copy{border-radius:999px;background:none;border:1px solid var(--line);color:var(--mute);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;cursor:pointer;transition:color .3s,border-color .3s}
 .copy:hover{color:var(--star);border-color:var(--star)}
 
 /* doubt */
@@ -499,7 +507,6 @@ footer .op{margin-top:28px;max-width:80ch;color:var(--mute);font-size:13px;line-
       <div class="btns">
         <a class="cta" href="#buy" data-cta="hero.cta"></a>
       </div>
-      <span class="mono" data-i="hero.seller"></span>
     </div>
   </div>
 </section>
@@ -571,6 +578,13 @@ footer .op{margin-top:28px;max-width:80ch;color:var(--mute);font-size:13px;line-
     </div>
     <p class="mono" style="margin-top:40px;font-size:10.5px" data-i="offer.note"></p>
   </div>
+</section>
+
+<!-- CAR ACCESSORIES (content pending from client) -->
+<section class="acc wrap" id="accessories">
+  <p class="mono tag" data-a="tag"></p>
+  <div class="ahead"><h2 class="wide" data-a="title"></h2><p class="lede" data-a="sub"></p></div>
+  <div class="aslots"><div class="slot"><span class="mono" data-a="soon"></span></div><div class="slot"><span class="mono" data-a="soon"></span></div><div class="slot"><span class="mono" data-a="soon"></span></div></div>
 </section>
 
 <!-- ALTITUDE / SPACEX -->
@@ -653,12 +667,6 @@ footer .op{margin-top:28px;max-width:80ch;color:var(--mute);font-size:13px;line-
       <p class="tl" data-i="about.tl"></p>
     </div>
   </div>
-  <div class="brands">
-    <figure><div class="lg"><img src="media/skala.webp" alt="SKALA Brasil" class="tall" loading="lazy" width="106" height="75"></div><figcaption data-i="about.b1"></figcaption></figure>
-    <figure><div class="lg"><img src="media/bauducco.webp" alt="Bauducco" loading="lazy" width="172" height="56"></div><figcaption data-i="about.b2"></figcaption></figure>
-    <figure><div class="lg"><img src="media/max.webp" alt="Max Titanium" class="tall" loading="lazy" width="63" height="68"></div><figcaption data-i="about.b3"></figcaption></figure>
-    <figure><div class="lg"><img src="media/starlink.webp" alt="Starlink" loading="lazy" width="112" height="56"></div><figcaption data-i="about.b4"></figcaption></figure>
-  </div>
 </section>
 
 <!-- FAQ -->
@@ -723,21 +731,22 @@ document.documentElement.classList.add('js');
 var WA_NUM='5926665260';
 var D={
 en:{
+ acc:{"tag": "Accessories", "title": "Car accessories", "sub": "Take your Starlink Mini on the road. Accessories coming soon.", "soon": "Coming soon"},
  guide:{"tag": "Already have your kit?", "title": "Starlink Mini activation guide", "sub": "Welcome to truly fast internet.", "before": "<b>Before you start:</b> open the box, connect the cable to the antenna and the power supply, and plug it in. Point the antenna at an open sky. On your phone, forget any Wi-Fi network you are connected to, then connect to the network named <b>STARLINK</b>.", "refTitle": "Use this link before creating your account", "refBody": "Activating with this referral link gives you 1 month of free service.", "cta": "Activate with referral link", "steps": [["Select Guyana", ["Scan the QR code or open the referral link. On the next screen, tap the three lines (top right), then the globe icon, and select Guyana as the country."]], ["Start", ["Tap “Do you already own a Starlink kit?” and choose “I already have my Starlink Kit”. This option is for customers who already bought the Starlink Mini and want to activate it."]], ["Create your account", ["Tap Create Account and enter your name, email and password.", "Keep this information safe. You will need it whenever you access your Starlink."]], ["Link your Starlink Mini", ["You will be asked for your equipment number. Enter the Kit Number manually, for example SN: KIT0000000000000.", "After this step, your Starlink Mini is linked to your account."]], ["Choose your plan", ["Select the plan, then enter the payment method to complete the activation.", "You must register a credit or debit card accepted by Starlink. If your debit card is not accepted, contact your bank and speak to your manager. Some cards need authorization for international payments.", "Billing follows the plan you chose. Check the monthly fee and the first billing date, review the data and confirm the activation."]], ["Download the Starlink app", ["Android: open the Google Play Store, search for Starlink and install the official app.", "iPhone (iOS): open the App Store, search for Starlink and install the official app.", "Log in with the same email and password you registered."]], ["Assemble your Starlink Mini", ["Open the rear support of the antenna.", "Place it with a clear view of the sky, away from trees, walls, roofs or anything above it.", "Connect the power cable and plug the power supply into the outlet. The Starlink Mini starts automatically."]], ["Connect your phone to the Starlink Wi-Fi", ["On your phone, go to Settings → Wi-Fi and connect to the network called STARLINK or STARLINK-XXXX."]], ["Set up your Wi-Fi network", ["Open the Starlink app. It will ask you to create a Wi-Fi network name and a password. Choose an easy-to-identify name and a secure password, then tap Save.", "Reconnect your phone using the new network name."]], ["Check for obstructions", ["In the Starlink app, go to Obstructions and follow the instructions.", "If obstacles show up, move the antenna to a spot with a better view of the sky. Fewer obstructions mean better speed and stability."]], ["Wait for the connection", ["The Starlink Mini starts locating satellites on its own. The first time can take a few minutes.", "When the app shows ✓ Online, your internet is ready. Your Starlink Mini is activated and linked to your account."]]], "tipsTitle": "Important tips", "tips": ["Don’t turn off the antenna during the initial setup.", "Always use the original power supply.", "Install the antenna where it has a wide view of the sky.", "If you change your address, update your location in the Starlink app.", "The app shows speed, usage, updates and antenna status."], "helpTitle": "Need help?", "help": "Official Starlink support helps with account activation, antenna linking, payment issues and warranty. In the app: Account → Support · +1 888 467 8275 · <a class=\"ulink\" href=\"https://support.starlink.com\" target=\"_blank\" rel=\"noopener\">support.starlink.com</a>", "step": "Step"},
  'sol.imgCap':"Starlink satellites · low Earth orbit",
  'offer.amt':"65,000",
  'nav.cta':'Order on WhatsApp',
  'hero.kicker':'Starlink · Now in Guyana',
- h1:["High-speed internet,", "anywhere,", "no matter how remote the region."],
+ h1:["High-speed internet,", "<em>anywhere.</em>"],
  'hero.sub':'<b>No cables. No fiber. No waiting for your area’s infrastructure.</b> High-speed internet for your home, business, farm or operation, even where traditional internet barely reaches.',
  'hero.cta':"Order Now! · 65,000 GYD",
  'hero.price':'See price · GYD 65,000',
  'hero.seller':'Sold in Guyana by Marinho Connecting Markets',
  'mani.tag':'Where you live vs. good internet',
- 'mani.title':'Stop choosing between where you want to be and a good connection.',
- verbs:['Work.','Stream.','Study.','Video calls.','Run your business.','Family, connected.'],
+ 'mani.title':"Stop choosing between where you want to be and <em>a good connection.</em>",
+ verbs:["Work.", "Game online.", "Study.", "Video calls.", "Run your business.", "Family, connected."],
  vlabel:'Connected',
- 'mani.far':"Wherever you want to be, with the best connection by your side.",
+ 'mani.far':"<span class=\"hl\">Wherever you want to be, with the best connection by your side.</span>",
  'mani.sky':'With Starlink, the sky becomes part of your connection.',
  'pain.tag':"The solution",
  'pain.title':'Your internet shouldn’t limit your life.',
@@ -748,8 +757,8 @@ en:{
  'pain.cost':"Starlink satellite internet <em>anywhere, with no infrastructure needed.</em>",
  'sol.tag':'The other way',
  'sol.title':'There is another way.',
- 'sol.body':'Instead of depending only on ground infrastructure, Starlink uses a constellation of satellites in low Earth orbit to deliver internet.',
- 'sol.sub':'Connect directly to the Starlink network.',
+ 'sol.body':"Instead of depending only on ground infrastructure, Starlink uses a constellation of satellites in low Earth orbit.",
+ 'sol.sub':"<span class=\"hl\">Connect directly to the Starlink network.</span>",
  steps:[["Place", "Install the dish where it has a clear view of the sky."], ["Connect", "Connect the system. Setup is designed to be simple."], ["You’re online", "You, your home, your business, connected to the Starlink network."]],
  dish:'DISH · CLEAR VIEW OF THE SKY',
  'sol.line':'Advanced technology. Practical setup. A new way to be connected.',
@@ -772,7 +781,7 @@ en:{
  'free.end':'That’s the change Starlink made possible.',
  'voices.title':'What changes when internet stops being a worry?',
  'voices.badge':'Illustrative testimonials',
- qs:[['We finally have a much better connection in our area.','Home customer'],['We needed internet to work, and traditional infrastructure didn’t serve our location well.','Business owner'],['Now I take my calls and work online with much more peace of mind.','Remote professional'],['Installation was much simpler than we expected.','Starlink customer'],['For anyone who lives or works far from the city, having this option makes a real difference.','Rural customer']],
+ qs:[['We finally have a much better connection in our area.','Seon, Mazaruni'],['We needed internet to work, and traditional infrastructure didn’t serve our location well.','Patrícia, businesswoman in Ogle'],['Now I take my calls and work online with much more peace of mind.','Ryad, Georgetown'],['Installation was much simpler than we expected.','Ameena, Lethem'],['For anyone who lives or works far from the city, having this option makes a real difference.','Howard, miner in Bartica']],
  'voices.note':'Illustrative testimonials. Experience and performance may vary with location, plan, installation, environmental conditions and service availability.',
  'offer.kick':'Starlink<br>in Guyana',
  'offer.tag':'The equipment',
@@ -786,14 +795,14 @@ en:{
  'offer.body':'Get your Starlink equipment through <b>Marinho Connecting Markets</b>. Talk straight to our team on WhatsApp.',
  'offer.cta':"Buy Now!",
  'offer.priceLabel':'Price','offer.wa':'WhatsApp Business','offer.copy':'Copy','offer.copied':'Copied',
- ask:[["Available models", "Right now we sell the Starlink Mini, in stock and ready for delivery in Guyana."], ["Purchase terms", "You can pay for the Starlink Mini in cash or with MMG when your order is delivered."], ["Plans", "<table class=\"plans\"><tbody><tr><th colspan=\"2\">Home</th></tr><tr><td>Residential Lite · 200 Mbps</td><td>8,000 <small>GYD/month</small></td></tr><tr><td>Residential · 400+ Mbps</td><td>11,700 <small>GYD/month</small></td></tr><tr><th colspan=\"2\">Roam</th></tr><tr><td>Limited roaming · 100 GB</td><td>12,000 <small>GYD/month</small></td></tr><tr><td>Unlimited roaming</td><td>22,000 <small>GYD/month</small></td></tr></tbody></table><p>Residential plans are for fixed use at a single location. If you need mobility, we recommend the Roam plan.</p><p>These are the prices charged by Starlink itself, with no markup. We don’t intermediate your account, so you pay less, exactly what Starlink charges.</p><p class=\"warn\">Don’t accept intermediaries. The account must be yours.</p>"], ["Whose name is the Starlink account in?", "Yours. You are the account holder with Starlink, with no intermediary. Don’t accept intermediaries."], ["Is the Starlink unlocked?", "Yes. It comes unlocked so you can set it up in your own name."], ["Can I use it in another country?", "Yes. On the Roam plan you can take it to another country and keep internet for up to 30 days."], ["Is your stock in Guyana?", "Yes. We have the product ready for delivery."], ["Do you deliver?", "Free delivery in Georgetown and near Vreed en Hoop. For places farther away, we recommend picking it up in Georgetown or Vreed en Hoop, where we deliver for free."], ["Equipment guidance", "Our team helps you set up your Starlink Mini on WhatsApp Business."]],
+ ask:[["Available models", "Right now we sell the Starlink Mini, in stock and ready for delivery in Guyana."], ["Purchase terms", "You can pay for the Starlink Mini in cash or with MMG when your order is delivered."], ["Plans", "<p class=\"pre\"><b>Prerequisite:</b> a credit or debit card to register as the payment method with Starlink.</p><table class=\"plans\"><tbody><tr><th colspan=\"2\">Home</th></tr><tr><td>Residential Lite · 200 Mbps</td><td>8,000 <small>GYD/month</small></td></tr><tr><td>Residential · 400+ Mbps</td><td>11,700 <small>GYD/month</small></td></tr><tr><th colspan=\"2\">Roam</th></tr><tr><td>Limited roaming · 100 GB</td><td>12,000 <small>GYD/month</small></td></tr><tr><td>Unlimited roaming</td><td>22,000 <small>GYD/month</small></td></tr></tbody></table><p>Residential plans are for fixed use at a single location. If you need mobility, we recommend the Roam plan.</p><p>These are the prices charged by Starlink itself, with no markup. We don’t intermediate your account, so you pay less, exactly what Starlink charges.</p><p class=\"warn\">Don’t accept intermediaries. The account must be yours.</p>"], ["Whose name is the Starlink account in?", "Yours. You are the account holder with Starlink, with no intermediary. Don’t accept intermediaries."], ["Is the Starlink unlocked?", "Yes. It comes unlocked so you can set it up in your own name."], ["Can I use it in another country?", "Yes. On the Roam plan you can take it to another country and keep internet for up to 30 days."], ["Is your stock in Guyana?", "Yes. We have the product ready for delivery."], ["Do you deliver?", "Free delivery in Georgetown and near Vreed en Hoop. For places farther away, we recommend picking it up in Georgetown or Vreed en Hoop, where we deliver for free."], ["Equipment guidance", "Our team helps you set up your Starlink Mini on WhatsApp Business."]],
  askLabel:'Ask us',
  'doubt.title':'Questions before you buy?',
  'doubt.a':'No problem.',
  'doubt.b':"Our team will guide you.",
  'doubt.cta':"Contact us!",
  'about.tag':'Who brings it to Guyana',
- 'about.body':"<b>Marinho Connecting Markets Inc.</b> connects Guyana to major international brands. We work as commercial representatives, bringing quality, trusted, high-potential products to market with brands like <b>SKALA Brasil, Bauducco, Max Titanium and Starlink.</b>",
+ 'about.body':"<b>Marinho Connecting Markets Inc.</b> connects Guyana to major international brands. We work as commercial representatives, bringing quality, trusted, high-potential products to market.",
  'about.tl':'We connect brands, markets and opportunities.',
  'about.b1':'Hair care · Brazil','about.b2':'Food · Brazil','about.b3':'Supplements · Brazil','about.b4':'Satellite internet',
  'faq.title':'Straight answers.',
@@ -808,21 +817,22 @@ en:{
  waText:'Hi! I saw your website and I want to know more about Starlink in Guyana.'
 },
 es:{
+ acc:{"tag": "Accesorios", "title": "Accesorios para auto", "sub": "Lleva tu Starlink Mini en el camino. Accesorios muy pronto.", "soon": "Muy pronto"},
  guide:{"tag": "¿Ya tienes tu kit?", "title": "Guía de activación Starlink Mini", "sub": "Bienvenido al internet realmente rápido.", "before": "<b>Antes de empezar:</b> abre la caja, conecta el cable a la antena y a la fuente, y enchúfala. Apunta la antena a un cielo despejado. En tu teléfono, olvida cualquier red Wi-Fi a la que estés conectado y conéctate a la red llamada <b>STARLINK</b>.", "refTitle": "Usa este enlace antes de crear tu cuenta", "refBody": "Al activar con este enlace de referido recibes 1 mes de servicio gratis.", "cta": "Activar con enlace de referido", "steps": [["Selecciona Guyana", ["Escanea el código QR o abre el enlace de referido. En la siguiente pantalla, toca las tres líneas (arriba a la derecha), luego el ícono del globo y selecciona Guyana como país."]], ["Inicio", ["Toca “¿Ya tienes un kit Starlink?” y elige “Ya tengo mi kit Starlink”. Esta opción es para clientes que ya compraron la Starlink Mini y quieren activarla."]], ["Crea tu cuenta", ["Toca Crear cuenta e ingresa tu nombre, correo y contraseña.", "Guarda estos datos. Los necesitarás cada vez que accedas a tu Starlink."]], ["Vincula tu Starlink Mini", ["Te pedirán el número del equipo. Ingresa el número del kit manualmente, por ejemplo SN: KIT0000000000000.", "Después de este paso, tu Starlink Mini queda vinculada a tu cuenta."]], ["Elige tu plan", ["Selecciona el plan e ingresa el método de pago para completar la activación.", "Debes registrar una tarjeta de crédito o débito aceptada por Starlink. Si tu tarjeta de débito no es aceptada, contacta a tu banco y habla con tu ejecutivo. Algunas tarjetas necesitan autorización para pagos internacionales.", "El cobro sigue el plan elegido. Revisa la mensualidad y la fecha del primer cobro, verifica los datos y confirma la activación."]], ["Descarga la app Starlink", ["Android: abre Google Play Store, busca Starlink e instala la app oficial.", "iPhone (iOS): abre App Store, busca Starlink e instala la app oficial.", "Inicia sesión con el mismo correo y contraseña que registraste."]], ["Arma tu Starlink Mini", ["Abre el soporte trasero de la antena.", "Ubícala con vista despejada del cielo, lejos de árboles, paredes, techos o cualquier cosa encima.", "Conecta el cable de energía y enchufa la fuente al tomacorriente. La Starlink Mini se enciende sola."]], ["Conecta tu teléfono al Wi-Fi Starlink", ["En tu teléfono, ve a Ajustes → Wi-Fi y conéctate a la red llamada STARLINK o STARLINK-XXXX."]], ["Configura tu red Wi-Fi", ["Abre la app Starlink. Te pedirá crear un nombre de red Wi-Fi y una contraseña. Elige un nombre fácil de reconocer y una contraseña segura, y toca Guardar.", "Vuelve a conectar tu teléfono con el nuevo nombre de red."]], ["Revisa obstrucciones", ["En la app Starlink, ve a Obstrucciones y sigue las instrucciones.", "Si aparecen obstáculos, mueve la antena a un lugar con mejor vista del cielo. Menos obstrucciones significan más velocidad y estabilidad."]], ["Espera la conexión", ["La Starlink Mini empieza a buscar satélites sola. La primera vez puede tardar unos minutos.", "Cuando la app muestre ✓ Online, tu internet está listo. Tu Starlink Mini está activada y vinculada a tu cuenta."]]], "tipsTitle": "Consejos importantes", "tips": ["No apagues la antena durante la configuración inicial.", "Usa siempre la fuente original.", "Instala la antena donde tenga una vista amplia del cielo.", "Si cambias de dirección, actualiza tu ubicación en la app Starlink.", "La app muestra velocidad, uso, actualizaciones y estado de la antena."], "helpTitle": "¿Necesitas ayuda?", "help": "El soporte oficial de Starlink ayuda con activación de cuenta, vinculación de la antena, problemas de pago y garantía. En la app: Cuenta → Soporte · +1 888 467 8275 · <a class=\"ulink\" href=\"https://support.starlink.com\" target=\"_blank\" rel=\"noopener\">support.starlink.com</a>", "step": "Paso"},
  'sol.imgCap':"Satélites Starlink · órbita baja",
  'offer.amt':"65,000",
  'nav.cta':'Pedir por WhatsApp',
  'hero.kicker':'Starlink · Ya en Guyana',
- h1:["Internet de alta velocidad,", "en cualquier lugar,", "sin importar lo remota que sea la región."],
+ h1:["Internet de alta velocidad,", "<em>en cualquier lugar.</em>"],
  'hero.sub':'<b>Sin cables. Sin fibra. Sin esperar la infraestructura de tu zona.</b> Internet de alta velocidad para tu casa, empresa, finca u operación, incluso donde el internet tradicional casi no llega.',
  'hero.cta':"¡Pide ya! · 65,000 GYD",
  'hero.price':'Ver precio · GYD 65,000',
  'hero.seller':'Vendido en Guyana por Marinho Connecting Markets',
  'mani.tag':'Dónde vives vs. buen internet',
- 'mani.title':'Deja de elegir entre dónde quieres estar y una buena conexión.',
- verbs:['Trabajar.','Ver series.','Estudiar.','Videollamadas.','Tu negocio.','Familia conectada.'],
+ 'mani.title':"Deja de elegir entre dónde quieres estar y <em>una buena conexión.</em>",
+ verbs:["Trabajar.", "Jugar online.", "Estudiar.", "Videollamadas.", "Tu negocio.", "Familia conectada."],
  vlabel:'Conectado',
- 'mani.far':"Donde quieras estar, acompañado de la mejor conexión.",
+ 'mani.far':"<span class=\"hl\">Donde quieras estar, acompañado de la mejor conexión.</span>",
  'mani.sky':'Con Starlink, el cielo se vuelve parte de tu conexión.',
  'pain.tag':"La solución",
  'pain.title':'Tu internet no debería limitar tu vida.',
@@ -833,8 +843,8 @@ es:{
  'pain.cost':"Internet satelital Starlink <em>en cualquier lugar, sin necesidad de infraestructura.</em>",
  'sol.tag':'El otro camino',
  'sol.title':'Hay otro camino.',
- 'sol.body':'En lugar de depender solo de la infraestructura terrestre, Starlink usa una constelación de satélites en órbita baja para darte internet.',
- 'sol.sub':'Conéctate directamente a la red Starlink.',
+ 'sol.body':"En lugar de depender solo de la infraestructura terrestre, Starlink usa una constelación de satélites en órbita baja.",
+ 'sol.sub':"<span class=\"hl\">Conéctate directamente a la red Starlink.</span>",
  steps:[["Ubica", "Instala la antena donde tenga vista despejada del cielo."], ["Conecta", "Conecta el sistema. La instalación está pensada para ser simple."], ["Ya estás en línea", "Tú, tu casa, tu empresa, conectados a la red Starlink."]],
  dish:'ANTENA · CIELO DESPEJADO',
  'sol.line':'Tecnología avanzada. Instalación práctica. Una nueva forma de estar conectado.',
@@ -857,7 +867,7 @@ es:{
  'free.end':'Ese es el cambio que Starlink hizo posible.',
  'voices.title':'¿Qué cambia cuando el internet deja de ser una preocupación?',
  'voices.badge':'Testimonios ilustrativos',
- qs:[['Por fin tenemos una conexión mucho mejor en nuestra zona.','Cliente residencial'],['Necesitábamos internet para trabajar y la infraestructura tradicional no llegaba bien a nuestra ubicación.','Empresario'],['Hoy hago mis llamadas y trabajo online con mucha más tranquilidad.','Profesional remoto'],['La instalación fue mucho más simple de lo que imaginábamos.','Cliente Starlink'],['Para quien vive o trabaja lejos de la ciudad, tener esta alternativa hace mucha diferencia.','Cliente rural']],
+ qs:[['Por fin tenemos una conexión mucho mejor en nuestra zona.','Seon, Mazaruni'],['Necesitábamos internet para trabajar y la infraestructura tradicional no llegaba bien a nuestra ubicación.','Patrícia, empresaria en Ogle'],['Hoy hago mis llamadas y trabajo online con mucha más tranquilidad.','Ryad, Georgetown'],['La instalación fue mucho más simple de lo que imaginábamos.','Ameena, Lethem'],['Para quien vive o trabaja lejos de la ciudad, tener esta alternativa hace mucha diferencia.','Howard, minero en Bartica']],
  'voices.note':'Testimonios ilustrativos. La experiencia y el rendimiento pueden variar según ubicación, plan, instalación, condiciones ambientales y disponibilidad del servicio.',
  'offer.kick':'Starlink<br>en Guyana',
  'offer.tag':'El equipo',
@@ -871,14 +881,14 @@ es:{
  'offer.body':'Adquiere tu equipo Starlink con <b>Marinho Connecting Markets</b>. Habla directo con nuestro equipo por WhatsApp.',
  'offer.cta':"¡Comprar ahora!",
  'offer.priceLabel':'Precio','offer.wa':'WhatsApp Business','offer.copy':'Copiar','offer.copied':'Copiado',
- ask:[["Modelos disponibles", "Hoy vendemos la Starlink Mini, en stock y lista para entrega en Guyana."], ["Condiciones de compra", "Puedes pagar la Starlink Mini en efectivo o con MMG cuando se entregue tu pedido."], ["Planes", "<table class=\"plans\"><tbody><tr><th colspan=\"2\">Hogar</th></tr><tr><td>Residential Lite · 200 Mbps</td><td>8,000 <small>GYD/mes</small></td></tr><tr><td>Residential · 400+ Mbps</td><td>11,700 <small>GYD/mes</small></td></tr><tr><th colspan=\"2\">Roam</th></tr><tr><td>Roaming limitado · 100 GB</td><td>12,000 <small>GYD/mes</small></td></tr><tr><td>Roaming ilimitado</td><td>22,000 <small>GYD/mes</small></td></tr></tbody></table><p>Los planes residenciales son para uso fijo en una sola ubicación. Si necesitas movilidad, recomendamos el plan Roam.</p><p>Son los precios que cobra la propia Starlink, sin ningún recargo. No intermediamos tu cuenta, por eso pagas menos, exactamente lo que cobra Starlink.</p><p class=\"warn\">No aceptes intermediarios. La cuenta debe ser tuya.</p>"], ["¿A nombre de quién queda la cuenta Starlink?", "A tu nombre. Tú eres el titular de la cuenta con Starlink, sin intermediarios. No aceptes intermediarios."], ["¿La Starlink viene desbloqueada?", "Sí. Viene desbloqueada para que la configures a tu nombre."], ["¿Puedo usarla en otro país?", "Sí. Con el plan Roam puedes llevarla a otro país y tener internet por hasta 30 días."], ["¿Tienen stock en Guyana?", "Sí. Tenemos el producto listo para entrega."], ["¿Hacen delivery?", "Entrega gratis en Georgetown y cerca de Vreed en Hoop. Para lugares más lejanos, recomendamos retirarla en Georgetown o Vreed en Hoop, donde entregamos gratis."], ["Orientación sobre el equipo", "Nuestro equipo te ayuda a configurar tu Starlink Mini por WhatsApp Business."]],
+ ask:[["Modelos disponibles", "Hoy vendemos la Starlink Mini, en stock y lista para entrega en Guyana."], ["Condiciones de compra", "Puedes pagar la Starlink Mini en efectivo o con MMG cuando se entregue tu pedido."], ["Planes", "<p class=\"pre\"><b>Requisito:</b> tener tarjeta de crédito o débito para registrar el método de pago en Starlink.</p><table class=\"plans\"><tbody><tr><th colspan=\"2\">Hogar</th></tr><tr><td>Residential Lite · 200 Mbps</td><td>8,000 <small>GYD/mes</small></td></tr><tr><td>Residential · 400+ Mbps</td><td>11,700 <small>GYD/mes</small></td></tr><tr><th colspan=\"2\">Roam</th></tr><tr><td>Roaming limitado · 100 GB</td><td>12,000 <small>GYD/mes</small></td></tr><tr><td>Roaming ilimitado</td><td>22,000 <small>GYD/mes</small></td></tr></tbody></table><p>Los planes residenciales son para uso fijo en una sola ubicación. Si necesitas movilidad, recomendamos el plan Roam.</p><p>Son los precios que cobra la propia Starlink, sin ningún recargo. No intermediamos tu cuenta, por eso pagas menos, exactamente lo que cobra Starlink.</p><p class=\"warn\">No aceptes intermediarios. La cuenta debe ser tuya.</p>"], ["¿A nombre de quién queda la cuenta Starlink?", "A tu nombre. Tú eres el titular de la cuenta con Starlink, sin intermediarios. No aceptes intermediarios."], ["¿La Starlink viene desbloqueada?", "Sí. Viene desbloqueada para que la configures a tu nombre."], ["¿Puedo usarla en otro país?", "Sí. Con el plan Roam puedes llevarla a otro país y tener internet por hasta 30 días."], ["¿Tienen stock en Guyana?", "Sí. Tenemos el producto listo para entrega."], ["¿Hacen delivery?", "Entrega gratis en Georgetown y cerca de Vreed en Hoop. Para lugares más lejanos, recomendamos retirarla en Georgetown o Vreed en Hoop, donde entregamos gratis."], ["Orientación sobre el equipo", "Nuestro equipo te ayuda a configurar tu Starlink Mini por WhatsApp Business."]],
  askLabel:'Pregúntanos',
  'doubt.title':'¿Dudas antes de comprar?',
  'doubt.a':'Sin problema.',
  'doubt.b':"Nuestro equipo te orienta.",
  'doubt.cta':"¡Contáctanos!",
  'about.tag':'Quién la trae a Guyana',
- 'about.body':"<b>Marinho Connecting Markets Inc.</b> conecta Guyana con grandes marcas internacionales. Somos representantes comerciales y llevamos al mercado productos de calidad, confianza y alto potencial, con marcas como <b>SKALA Brasil, Bauducco, Max Titanium y Starlink.</b>",
+ 'about.body':"<b>Marinho Connecting Markets Inc.</b> conecta Guyana con grandes marcas internacionales. Somos representantes comerciales y llevamos al mercado productos de calidad, confianza y alto potencial.",
  'about.tl':'Conectamos marcas, mercados y oportunidades.',
  'about.b1':'Cuidado capilar · Brasil','about.b2':'Alimentos · Brasil','about.b3':'Suplementos · Brasil','about.b4':'Internet satelital',
  'faq.title':'Respuestas directas.',
@@ -893,21 +903,22 @@ es:{
  waText:'¡Hola! Vi su sitio web y quiero saber más sobre Starlink en Guyana.'
 },
 pt:{
+ acc:{"tag": "Acessórios", "title": "Acessórios para carro", "sub": "Leve sua Starlink Mini na estrada. Acessórios em breve.", "soon": "Em breve"},
  guide:{"tag": "Já tem seu kit?", "title": "Guia de ativação Starlink Mini", "sub": "Bem-vindo à internet realmente rápida.", "before": "<b>Antes de começar:</b> abra a caixa, conecte o cabo na antena e na fonte e ligue na tomada. Aponte a antena para um céu livre. No celular, esqueça qualquer rede Wi-Fi conectada e conecte-se à rede chamada <b>STARLINK</b>.", "refTitle": "Use este link antes de criar sua conta", "refBody": "Ativando com este link de indicação você ganha 1 mês de serviço grátis.", "cta": "Ativar com link de indicação", "steps": [["Selecione a Guiana", ["Escaneie o QR Code ou abra o link de indicação. Na próxima tela, toque nos três traços (canto superior direito), depois no ícone do globo, e selecione Guyana como país."]], ["Início", ["Toque em “Você já tem um kit Starlink?” e escolha “Já tenho meu kit Starlink”. Essa opção é para quem já comprou a Starlink Mini e quer ativá-la."]], ["Crie sua conta", ["Toque em Criar conta e informe nome, e-mail e senha.", "Guarde esses dados. Você vai precisar deles sempre que acessar sua Starlink."]], ["Vincule sua Starlink Mini", ["Será pedido o número do equipamento. Digite o número do kit manualmente, por exemplo SN: KIT0000000000000.", "Depois desse passo, sua Starlink Mini fica vinculada à sua conta."]], ["Escolha seu plano", ["Selecione o plano e informe a forma de pagamento para concluir a ativação.", "É preciso cadastrar um cartão de crédito ou débito aceito pela Starlink. Se o cartão de débito não for aceito, procure seu banco e fale com seu gerente. Alguns cartões precisam de autorização para pagamentos internacionais.", "A cobrança segue o plano contratado. Confira a mensalidade e a data da primeira cobrança, revise os dados e confirme a ativação."]], ["Baixe o app Starlink", ["Android: abra a Google Play Store, busque Starlink e instale o app oficial.", "iPhone (iOS): abra a App Store, busque Starlink e instale o app oficial.", "Entre com o mesmo e-mail e senha que você cadastrou."]], ["Monte sua Starlink Mini", ["Abra o suporte traseiro da antena.", "Posicione com visão livre do céu, longe de árvores, paredes, telhados ou qualquer coisa acima.", "Conecte o cabo de energia e ligue a fonte na tomada. A Starlink Mini liga sozinha."]], ["Conecte o celular ao Wi-Fi Starlink", ["No celular, vá em Ajustes → Wi-Fi e conecte-se à rede chamada STARLINK ou STARLINK-XXXX."]], ["Configure sua rede Wi-Fi", ["Abra o app Starlink. Ele vai pedir para criar um nome de rede Wi-Fi e uma senha. Escolha um nome fácil de identificar e uma senha segura e toque em Salvar.", "Reconecte o celular usando o novo nome da rede."]], ["Verifique obstruções", ["No app Starlink, vá em Obstruções e siga as instruções.", "Se aparecerem obstáculos, mude a antena para um local com melhor visão do céu. Menos obstruções significam mais velocidade e estabilidade."]], ["Aguarde a conexão", ["A Starlink Mini começa a localizar os satélites sozinha. Na primeira vez pode levar alguns minutos.", "Quando o app mostrar ✓ Online, sua internet está pronta. Sua Starlink Mini está ativada e vinculada à sua conta."]]], "tipsTitle": "Dicas importantes", "tips": ["Não desligue a antena durante a configuração inicial.", "Use sempre a fonte original.", "Instale a antena num local com ampla visão do céu.", "Se mudar de endereço, atualize sua localização pelo app Starlink.", "O app mostra velocidade, uso, atualizações e status da antena."], "helpTitle": "Precisa de ajuda?", "help": "O suporte oficial da Starlink ajuda com ativação da conta, vínculo da antena, problemas de pagamento e garantia. No app: Conta → Suporte · +1 888 467 8275 · <a class=\"ulink\" href=\"https://support.starlink.com\" target=\"_blank\" rel=\"noopener\">support.starlink.com</a>", "step": "Passo"},
  'sol.imgCap':"Satélites Starlink · órbita baixa",
  'offer.amt':"65.000",
  'nav.cta':'Pedir no WhatsApp',
  'hero.kicker':'Starlink · Agora na Guiana',
- h1:["Internet de alta velocidade,", "em qualquer lugar,", "não importa quão remota seja a região."],
+ h1:["Internet de alta velocidade,", "<em>em qualquer lugar.</em>"],
  'hero.sub':'<b>Sem cabos. Sem fibra. Sem depender da infraestrutura da sua região.</b> Internet de alta velocidade para sua casa, empresa, fazenda ou operação, mesmo onde a internet tradicional não chega bem.',
  'hero.cta':"Peça já! · 65.000 GYD",
  'hero.price':'Ver valor · GYD 65,000',
  'hero.seller':'Vendida na Guiana pela Marinho Connecting Markets',
  'mani.tag':'Onde você mora vs. internet boa',
- 'mani.title':'Pare de escolher entre onde você quer estar e uma boa conexão.',
- verbs:['Trabalhar.','Assistir.','Estudar.','Videochamadas.','Seu negócio.','Família conectada.'],
+ 'mani.title':"Pare de escolher entre onde você quer estar e <em>uma boa conexão.</em>",
+ verbs:["Trabalhar.", "Jogar online.", "Estudar.", "Videochamadas.", "Seu negócio.", "Família conectada."],
  vlabel:'Conectado',
- 'mani.far':"Onde você quiser estar, acompanhado da melhor conexão.",
+ 'mani.far':"<span class=\"hl\">Onde você quiser estar, acompanhado da melhor conexão.</span>",
  'mani.sky':'Com a Starlink, o céu se torna parte da sua conexão.',
  'pain.tag':"A solução",
  'pain.title':'Sua internet não deveria limitar sua vida.',
@@ -918,8 +929,8 @@ pt:{
  'pain.cost':"Internet via satélite Starlink <em>para qualquer local e sem necessidade de infraestrutura.</em>",
  'sol.tag':'O outro caminho',
  'sol.title':'Existe outro caminho.',
- 'sol.body':'Em vez de depender só da infraestrutura terrestre, a Starlink usa uma constelação de satélites em órbita baixa para fornecer internet.',
- 'sol.sub':'Conecte-se diretamente à rede Starlink.',
+ 'sol.body':"Em vez de depender só da infraestrutura terrestre, a Starlink usa uma constelação de satélites em órbita baixa.",
+ 'sol.sub':"<span class=\"hl\">Conecte-se diretamente à rede Starlink.</span>",
  steps:[["Posicione", "Instale a antena num local com visão adequada do céu."], ["Conecte", "Ligue o sistema. A instalação foi pensada para ser prática."], ["Pronto, online", "Você, sua casa, sua empresa conectados à rede Starlink."]],
  dish:'ANTENA · VISÃO LIVRE DO CÉU',
  'sol.line':'Tecnologia avançada. Instalação prática. Uma nova forma de estar conectado.',
@@ -942,7 +953,7 @@ pt:{
  'free.end':'Essa é a mudança que a Starlink tornou possível.',
  'voices.title':'O que muda quando a internet deixa de ser uma preocupação?',
  'voices.badge':'Depoimentos ilustrativos',
- qs:[['Finalmente conseguimos ter uma conexão muito melhor na nossa região.','Cliente residencial'],['Precisávamos de internet para trabalhar e a infraestrutura tradicional não atendia bem nossa localização.','Empresário'],['Hoje consigo fazer minhas chamadas e trabalhar online com muito mais tranquilidade.','Profissional remoto'],['A instalação foi muito mais simples do que imaginávamos.','Cliente Starlink'],['Para quem vive ou trabalha longe dos grandes centros, faz muita diferença ter essa alternativa.','Cliente rural']],
+ qs:[['Finalmente conseguimos ter uma conexão muito melhor na nossa região.','Seon, Mazaruni'],['Precisávamos de internet para trabalhar e a infraestrutura tradicional não atendia bem nossa localização.','Patrícia, empresária em Ogle'],['Hoje consigo fazer minhas chamadas e trabalhar online com muito mais tranquilidade.','Ryad, Georgetown'],['A instalação foi muito mais simples do que imaginávamos.','Ameena, Lethem'],['Para quem vive ou trabalha longe dos grandes centros, faz muita diferença ter essa alternativa.','Howard, minerador em Bartica']],
  'voices.note':'Depoimentos ilustrativos. Experiências e desempenho podem variar conforme localização, plano, instalação, condições ambientais e disponibilidade do serviço.',
  'offer.kick':'Starlink<br>na Guiana',
  'offer.tag':'O equipamento',
@@ -956,14 +967,14 @@ pt:{
  'offer.body':'Adquira seu equipamento Starlink através da <b>Marinho Connecting Markets</b>. Fale direto com nossa equipe pelo WhatsApp.',
  'offer.cta':"Comprar agora!",
  'offer.priceLabel':'Valor','offer.wa':'WhatsApp Business','offer.copy':'Copiar','offer.copied':'Copiado',
- ask:[["Modelos disponíveis", "Hoje vendemos a Starlink Mini, em estoque e pronta para entrega na Guiana."], ["Condições de compra", "O valor da Starlink Mini pode ser pago em dinheiro ou MMG quando o pedido for entregue."], ["Planos", "<table class=\"plans\"><tbody><tr><th colspan=\"2\">Residencial</th></tr><tr><td>Residential Lite · 200 Mbps</td><td>8,000 <small>GYD/mês</small></td></tr><tr><td>Residential · 400+ Mbps</td><td>11,700 <small>GYD/mês</small></td></tr><tr><th colspan=\"2\">Roam</th></tr><tr><td>Roaming limitado · 100 GB</td><td>12,000 <small>GYD/mês</small></td></tr><tr><td>Roaming ilimitado</td><td>22,000 <small>GYD/mês</small></td></tr></tbody></table><p>Os planos residenciais são para uso fixo em um único local. Para quem precisa de mobilidade, o recomendado é o plano Roam.</p><p>Os valores são os cobrados pela própria Starlink, sem acréscimo algum. Nós não intermediamos sua conta, por isso os valores são mais baratos e de acordo com a Starlink.</p><p class=\"warn\">Não aceite intermediário. A conta deve ser sua.</p>"], ["De quem é a conta na Starlink?", "Sua. O titular da conta junto à Starlink será você, sem intermediário. Não aceite intermediário."], ["A Starlink vem desbloqueada?", "Sim. Ela vem desbloqueada para você configurar em seu nome."], ["É possível usar em outro país?", "Sim. No plano Roam você pode ir a outro país e ficar com sinal de internet por no máximo 30 dias."], ["O estoque fica na Guiana?", "Sim. Temos o produto para pronta entrega."], ["Vocês fazem delivery?", "Entrega grátis em Georgetown e próximo de Vreed en Hoop. Para locais mais distantes, o recomendado é retirar em Georgetown ou Vreed en Hoop, onde entregamos grátis."], ["Orientações sobre o equipamento", "Nossa equipe ajuda você a configurar sua Starlink Mini pelo WhatsApp Business."]],
+ ask:[["Modelos disponíveis", "Hoje vendemos a Starlink Mini, em estoque e pronta para entrega na Guiana."], ["Condições de compra", "O valor da Starlink Mini pode ser pago em dinheiro ou MMG quando o pedido for entregue."], ["Planos", "<p class=\"pre\"><b>Pré-requisito:</b> ter cartão de crédito ou débito para cadastrar o método de pagamento na Starlink.</p><table class=\"plans\"><tbody><tr><th colspan=\"2\">Residencial</th></tr><tr><td>Residential Lite · 200 Mbps</td><td>8,000 <small>GYD/mês</small></td></tr><tr><td>Residential · 400+ Mbps</td><td>11,700 <small>GYD/mês</small></td></tr><tr><th colspan=\"2\">Roam</th></tr><tr><td>Roaming limitado · 100 GB</td><td>12,000 <small>GYD/mês</small></td></tr><tr><td>Roaming ilimitado</td><td>22,000 <small>GYD/mês</small></td></tr></tbody></table><p>Os planos residenciais são para uso fixo em um único local. Para quem precisa de mobilidade, o recomendado é o plano Roam.</p><p>Os valores são os cobrados pela própria Starlink, sem acréscimo algum. Nós não intermediamos sua conta, por isso os valores são mais baratos e de acordo com a Starlink.</p><p class=\"warn\">Não aceite intermediário. A conta deve ser sua.</p>"], ["De quem é a conta na Starlink?", "Sua. O titular da conta junto à Starlink será você, sem intermediário. Não aceite intermediário."], ["A Starlink vem desbloqueada?", "Sim. Ela vem desbloqueada para você configurar em seu nome."], ["É possível usar em outro país?", "Sim. No plano Roam você pode ir a outro país e ficar com sinal de internet por no máximo 30 dias."], ["O estoque fica na Guiana?", "Sim. Temos o produto para pronta entrega."], ["Vocês fazem delivery?", "Entrega grátis em Georgetown e próximo de Vreed en Hoop. Para locais mais distantes, o recomendado é retirar em Georgetown ou Vreed en Hoop, onde entregamos grátis."], ["Orientações sobre o equipamento", "Nossa equipe ajuda você a configurar sua Starlink Mini pelo WhatsApp Business."]],
  askLabel:'Consulte',
  'doubt.title':'Dúvidas antes de comprar?',
  'doubt.a':'Sem problema.',
  'doubt.b':"Nossa equipe irá orientar você.",
  'doubt.cta':"Fale conosco!",
  'about.tag':'Quem traz para a Guiana',
- 'about.body':"A <b>Marinho Connecting Markets Inc.</b> conecta a Guiana a grandes marcas internacionais. Atuamos como representantes comerciais, levando ao mercado produtos de qualidade, confiança e alto potencial, com marcas como <b>SKALA Brasil, Bauducco, Max Titanium e Starlink.</b>",
+ 'about.body':"A <b>Marinho Connecting Markets Inc.</b> conecta a Guiana a grandes marcas internacionais. Atuamos como representantes comerciais, levando ao mercado produtos de qualidade, confiança e alto potencial.",
  'about.tl':'Conectamos marcas, mercados e oportunidades.',
  'about.b1':'Cabelos · Brasil','about.b2':'Alimentos · Brasil','about.b3':'Suplementos · Brasil','about.b4':'Internet via satélite',
  'faq.title':'Respostas diretas.',
@@ -998,16 +1009,17 @@ function render(L){
   document.querySelectorAll('[data-cta]').forEach(function(el){var s=esc(t[el.getAttribute('data-cta')]);el.innerHTML='<span class="t"><span>'+s+'</span><span aria-hidden="true">'+s+'</span></span><span class="ar">'+ARROW+'</span>'});
   var wa='https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(t.waText);
   document.querySelectorAll('[data-wa]').forEach(function(a){a.href=wa});
-  document.getElementById('h1').innerHTML=t.h1.map(function(x){return '<span class="l"><span>'+esc(x)+'</span></span>'}).join('');
+  document.getElementById('h1').innerHTML=t.h1.map(function(x){return '<span class="l"><span>'+x+'</span></span>'}).join('');
   document.getElementById('verbs').innerHTML=t.verbs.map(function(v,i){return '<li class="wide"><span>'+esc(v)+'</span><span class="mono">'+esc(t.vlabel)+' · 0'+(i+1)+'</span></li>'}).join('');
   var times=['07:12:44','09:31:05','11:02:58','13:47:19','16:20:33','18:05:41','20:14:07'];
-  document.getElementById('steps').innerHTML=t.steps.map(function(s,i){return '<li class="rv"><span class="n">0'+(i+1)+'</span><h4>'+esc(s[0])+'</h4><p>'+esc(s[1])+'</p></li>'}).join('');
+  document.getElementById('steps').innerHTML=t.steps.map(function(s,i){return '<li class="rv"><span class="n">0'+(i+1)+'</span><h4>'+esc(s[0])+'</h4><p><span class="hl">'+esc(s[1])+'</span></p></li>'}).join('');
   document.getElementById('uses').innerHTML=t.uses.map(function(u){return '<li><h3 class="wide">'+esc(u[0])+'</h3><p>'+esc(u[1])+'</p></li>'}).join('');
   document.getElementById('imagine').innerHTML=t.imagine.map(function(x,i){return '<p class="rv">'+esc(x)+'</p>'}).join('');
-  document.getElementById('qs').innerHTML=t.qs.map(function(q){return '<figure class="q rv"><blockquote>'+esc(q[0])+'</blockquote><figcaption class="mono">— '+esc(q[1])+'</figcaption></figure>'}).join('');
+  document.getElementById('qs').innerHTML=t.qs.map(function(q){return '<figure class="q rv"><blockquote>'+esc(q[0])+'</blockquote><figcaption class="mono qn">— '+esc(q[1])+'</figcaption></figure>'}).join('');
   document.getElementById('ask').innerHTML=t.ask.map(function(a,i){return '<details id="bq-'+i+'"'+(i===2?' open':'')+'><summary>'+esc(a[0])+'<span class="pl" aria-hidden="true"></span></summary><div class="ans">'+(a[1].charAt(0)==='<'?a[1]:'<p>'+esc(a[1])+'</p>')+'</div></details>'}).join('');
   document.getElementById('specs').innerHTML=t.specs.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>'}).join('');
   document.getElementById('faq').innerHTML=t.faq.map(function(f,i){return '<details id="faq-'+i+'"><summary>'+esc(f[0])+'<span class="pl" aria-hidden="true"></span></summary><p>'+esc(f[1]).replace('+592 666 5260','<a class="ulink" href="'+wa+'" target="_blank" rel="noopener">+592 666 5260</a>')+'</p></details>'}).join('');
+  document.querySelectorAll('[data-a]').forEach(function(el){el.textContent=t.acc[el.getAttribute('data-a')]});
   var g=t.guide;
   document.querySelectorAll('[data-g]').forEach(function(el){el.innerHTML=g[el.getAttribute('data-g')]});
   document.getElementById('refBtn').innerHTML='<span class="t"><span>'+esc(g.cta)+'</span><span aria-hidden="true">'+esc(g.cta)+'</span></span><span class="ar">'+ARROW+'</span>';
